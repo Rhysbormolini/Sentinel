@@ -18,6 +18,7 @@ namespace Gamekit3D
         SerializedProperty m_MaxTurnSpeedProp;
         SerializedProperty m_IdleTimeoutProp;
         SerializedProperty m_CanAttackProp;
+        SerializedProperty m_CanRollProp;
 
         SerializedProperty m_MeleeWeaponProp;
         SerializedProperty m_CameraSettingsProp;
@@ -28,6 +29,7 @@ namespace Gamekit3D
         SerializedProperty m_EmoteDeathPlayerProp;
         SerializedProperty m_EmoteAttackPlayerProp;
         SerializedProperty m_EmoteJumpPlayerProp;
+        SerializedProperty canRoll;
 
         GUIContent m_ScriptContent = new GUIContent("Script");
 
@@ -59,6 +61,7 @@ namespace Gamekit3D
             m_MaxTurnSpeedProp = serializedObject.FindProperty("maxTurnSpeed");
             m_IdleTimeoutProp = serializedObject.FindProperty("idleTimeout");
             m_CanAttackProp = serializedObject.FindProperty("canAttack");
+            m_CanRollProp = serializedObject.FindProperty("canRoll");
 
             m_MeleeWeaponProp = serializedObject.FindProperty("meleeWeapon");
             m_CameraSettingsProp = serializedObject.FindProperty("cameraSettings");
@@ -87,6 +90,7 @@ namespace Gamekit3D
 
             EditorGUILayout.PropertyField(m_IdleTimeoutProp, m_IdleTimeoutContent);
             EditorGUILayout.PropertyField(m_CanAttackProp, m_CanAttackContent);
+            EditorGUILayout.PropertyField(m_CanRollProp, m_CanAttackContent);
 
             EditorGUILayout.Space();
 

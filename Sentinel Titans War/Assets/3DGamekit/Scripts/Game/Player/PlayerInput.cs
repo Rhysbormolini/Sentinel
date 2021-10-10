@@ -20,9 +20,11 @@ public class PlayerInput : MonoBehaviour
     protected Vector2 m_Camera;
     protected bool m_Jump;
     protected bool m_Attack;
-    protected bool m_Roll;
     protected bool m_Pause;
     protected bool m_ExternalInputBlocked;
+
+    Actions Spartan;
+    Vector3 moveInput;
 
     public Vector2 MoveInput
     {
@@ -54,11 +56,6 @@ public class PlayerInput : MonoBehaviour
         get { return m_Attack && !playerControllerInputBlocked && !m_ExternalInputBlocked; }
     }
 
-    public bool Roll
-    {
-        get { return m_Roll && !playerControllerInputBlocked && !m_ExternalInputBlocked; }
-    }
-
     public bool Pause
     {
         get { return m_Pause; }
@@ -77,15 +74,18 @@ public class PlayerInput : MonoBehaviour
             s_Instance = this;
         else if (s_Instance != this)
             throw new UnityException("There cannot be more than one PlayerInput script.  The instances are " + s_Instance.name + " and " + name + ".");
+
+        Spartan = new Actions();
     }
 
 
     void Update()
     {
+        //Spartan.Player.Move.performed += i => moveInput = i.ReadValue<Vector3>();
+        
         m_Movement.Set(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         m_Camera.Set(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
         m_Jump = Input.GetButton("Jump");
-        m_Roll = Input.GetButton("C");
 
         if (Input.GetButtonDown("Fire1"))
         {
@@ -120,5 +120,29 @@ public class PlayerInput : MonoBehaviour
     public void GainControl()
     {
         m_ExternalInputBlocked = false;
+    }
+
+    private void OnEnable()
+    {
+        if (Spartan != null)
+        {
+            Spartan.Player.Roll.performed += i => 
+            {
+                //PlayerController.instance.m_Animator.CrossFade("Roll", 0.2f); 
+                PlayerController.instance.canRoll = true;
+            };
+
+            Spartan.Player.Move.performed += i => 
+            { 
+                moveInput = i.ReadValue<Vector2>(); 
+
+            };
+        }
+        Spartan.Enable();
+    }
+
+    private void OnDisable()
+    {
+        Spartan.Disable();
     }
 }

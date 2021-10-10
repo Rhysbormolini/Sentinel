@@ -21,6 +21,9 @@ namespace Gamekit3D
         public float maxTurnSpeed = 1200f;        // How fast Ellen turns when stationary.
         public float idleTimeout = 5f;            // How long before Ellen starts considering random idles.
         public bool canAttack;                    // Whether or not Ellen can swing her staff.
+        [SerializeField] public bool canRoll;
+        public Vector2 movement;
+        float horizontal, vertical;
 
         public CameraSettings cameraSettings;            // Reference used to determine the camera's direction.
         public MeleeWeapon meleeWeapon;                  // Reference used to (de)activate the staff when attacking. 
@@ -46,7 +49,7 @@ namespace Gamekit3D
         protected float m_VerticalSpeed;               // How fast Ellen is currently moving up or down.
         protected PlayerInput m_Input;                 // Reference used to determine how Ellen should move.
         protected CharacterController m_CharCtrl;      // Reference used to actually move Ellen.
-        protected Animator m_Animator;                 // Reference used to make decisions based on Ellen's current animation and to set parameters.
+        public Animator m_Animator;                 // Reference used to make decisions based on Ellen's current animation and to set parameters.
         protected Material m_CurrentWalkingSurface;    // Reference used to make decisions about audio.
         protected Quaternion m_TargetRotation;         // What rotation Ellen is aiming to have based on input.
         protected float m_AngleDiff;                   // Angle in degrees between Ellen's current rotation and her target rotation.
@@ -86,6 +89,7 @@ namespace Gamekit3D
         readonly int m_HashHurtFromY = Animator.StringToHash("HurtFromY");
         readonly int m_HashStateTime = Animator.StringToHash("StateTime");
         readonly int m_HashFootFall = Animator.StringToHash("FootFall");
+        readonly int m_HashRoll = Animator.StringToHash("Roll");
 
         // States
         readonly int m_HashLocomotion = Animator.StringToHash("Locomotion");
@@ -158,6 +162,9 @@ namespace Gamekit3D
             }
 
             s_Instance = this;
+
+            //vertical = Animator.StringToHash("Vertical");
+            //horizontal = Animator.StringToHash("Horizontal");
         }
 
         // Called automatically by Unity after Awake whenever the script is enabled. 
@@ -189,6 +196,9 @@ namespace Gamekit3D
         // Called automatically by Unity once every Physics step.
         void FixedUpdate()
         {
+            vertical = movement.x;
+            horizontal = movement.y;
+
             CacheAnimatorState();
 
             UpdateInputBlocking();
@@ -214,6 +224,53 @@ namespace Gamekit3D
             TimeoutToIdle();
 
             m_PreviouslyGrounded = m_IsGrounded;
+
+            HandleRolling();
+        }
+
+        void HandleRolling()
+        {
+            float v = 0;
+            float h = 0;
+
+            if (canRoll)
+            {
+                m_Animator.CrossFade("Roll", 0.2f);
+                if (movement.x > 0) //Right
+                {
+                    h = 1;
+                }
+                else if (movement.x < 0) //Left
+                {
+                    h = -1;
+                }
+                else
+                {
+                    h = 0;
+                }
+
+
+                if (movement.y > 0) //Forward
+                {
+                    v = 1;
+                }
+                else if (movement.y < 0) //Backwards
+                {
+                    v = -1;
+                }
+                else
+                {
+                    v = 0;
+                }
+
+                m_Animator.SetFloat("Vertical", v, 0.1f, Time.deltaTime);
+                m_Animator.SetFloat("Horizontal", h, 0.1f, Time.deltaTime);
+            }
+        }
+
+        private void LateUpdate()
+        {
+            //canRoll = false;
         }
 
         // Called at the start of FixedUpdate to record the current state of the base layer of the animator.
