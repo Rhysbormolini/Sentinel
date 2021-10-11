@@ -22,7 +22,7 @@ namespace Gamekit3D
 
         protected NavMeshAgent m_NavMeshAgent;
         protected bool m_FollowNavmeshAgent;
-        protected Animator m_Animator;
+        public Animator m_Animator;
         protected bool m_UnderExternalForce;
         protected bool m_ExternalForceAddGravity = true;
         protected Vector3 m_ExternalForce;
@@ -49,6 +49,17 @@ namespace Gamekit3D
             m_Rigidbody.interpolation = RigidbodyInterpolation.Interpolate;
 
             m_FollowNavmeshAgent = true;
+
+            if (m_Animator.avatar != null) return;
+
+            foreach (Animator anim in GetComponentsInChildren<Animator>())
+			{
+                if (anim != m_Animator)
+				{
+                    m_Animator.avatar = anim.avatar;
+                    anim.enabled = false;
+				}
+			}
         }
 
         private void FixedUpdate()
