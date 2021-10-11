@@ -89,7 +89,6 @@ namespace Gamekit3D
         readonly int m_HashHurtFromY = Animator.StringToHash("HurtFromY");
         readonly int m_HashStateTime = Animator.StringToHash("StateTime");
         readonly int m_HashFootFall = Animator.StringToHash("FootFall");
-        readonly int m_HashRoll = Animator.StringToHash("Roll");
 
         // States
         readonly int m_HashLocomotion = Animator.StringToHash("Locomotion");
@@ -233,44 +232,48 @@ namespace Gamekit3D
             float v = 0;
             float h = 0;
 
+            if (movement.x > 0) //Right
+            {
+                h = 1;
+            }
+            else if (movement.x < 0) //Left
+            {
+                h = -1;
+            }
+            else
+            {
+                h = 0;
+            }
+
+
+            if (movement.y > 0) //Forward
+            {
+                v = 1;
+            }
+            else if (movement.y < 0) //Backwards
+            {
+                v = -1;
+            }
+            else
+            {
+                v = 0;
+            }
+
+            m_Animator.SetFloat("Vertical", v, 0.1f, Time.deltaTime);
+            m_Animator.SetFloat("Horizontal", h, 0.1f, Time.deltaTime);
+
             if (canRoll)
             {
-                m_Animator.CrossFade("Roll", 0.2f);
-                if (movement.x > 0) //Right
-                {
-                    h = 1;
-                }
-                else if (movement.x < 0) //Left
-                {
-                    h = -1;
-                }
-                else
-                {
-                    h = 0;
-                }
-
-
-                if (movement.y > 0) //Forward
-                {
-                    v = 1;
-                }
-                else if (movement.y < 0) //Backwards
-                {
-                    v = -1;
-                }
-                else
-                {
-                    v = 0;
-                }
-
-                m_Animator.SetFloat("Vertical", v, 0.1f, Time.deltaTime);
-                m_Animator.SetFloat("Horizontal", h, 0.1f, Time.deltaTime);
+                m_Animator.applyRootMotion = true;
+                m_Animator.CrossFade("Rolling", 0.2f);
+                //m_Animator.SetBool("Roll", true);
             }
+            else return;
         }
 
         private void LateUpdate()
         {
-            //canRoll = false;
+            canRoll = false;
         }
 
         // Called at the start of FixedUpdate to record the current state of the base layer of the animator.
