@@ -32,6 +32,20 @@ namespace Gamekit3D
 
         const float k_GroundedRayDistance = .8f;
 
+        public string state;
+        public float runSpeed = 1f;
+        public float walkSpeed = 1;
+        private Vector3 deltaPosition
+		{
+            get
+			{
+                Vector3 delta = m_Animator.deltaPosition;
+                if (state == "Run") delta *= runSpeed;
+                else if (state == "Walk") delta *= walkSpeed;
+                return delta;
+			}
+		}
+
         void OnEnable()
         {
             m_NavMeshAgent = GetComponent<NavMeshAgent>();
@@ -102,16 +116,16 @@ namespace Gamekit3D
 
             if (m_FollowNavmeshAgent)
             {
-                m_NavMeshAgent.speed = (m_Animator.deltaPosition / Time.deltaTime).magnitude;
+                m_NavMeshAgent.speed = (deltaPosition / Time.deltaTime).magnitude;
                 transform.position = m_NavMeshAgent.nextPosition;
             }
             else
             {
                 RaycastHit hit;
-                if (!m_Rigidbody.SweepTest(m_Animator.deltaPosition.normalized, out hit,
-                    m_Animator.deltaPosition.sqrMagnitude))
+                if (!m_Rigidbody.SweepTest(deltaPosition.normalized, out hit,
+                    deltaPosition.sqrMagnitude))
                 {
-                    m_Rigidbody.MovePosition(m_Rigidbody.position + m_Animator.deltaPosition);
+                    m_Rigidbody.MovePosition(m_Rigidbody.position + deltaPosition);
                 }
             }
 
