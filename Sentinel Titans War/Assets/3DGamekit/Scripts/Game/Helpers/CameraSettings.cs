@@ -85,5 +85,12 @@ namespace Gamekit3D
             keyboardAndMouseCamera.Priority = inputChoice == InputChoice.KeyboardAndMouse ? 1 : 0;
             controllerCamera.Priority = inputChoice == InputChoice.Controller ? 1 : 0;
         }
+
+
+        public void ToggleAim(bool b)
+        {
+            var aim = Current.GetComponent<CameraAim>();
+            aim.enabled = b;
+        }
     } 
 }

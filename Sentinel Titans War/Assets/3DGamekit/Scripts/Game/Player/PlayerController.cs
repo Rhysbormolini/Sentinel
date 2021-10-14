@@ -538,7 +538,7 @@ namespace Gamekit3D
         // Called each physics step to count up to the point where Ellen considers a random idle.
         void TimeoutToIdle()
         {
-            bool inputDetected = IsMoveInput || m_Input.Attack || m_Input.JumpInput;
+            bool inputDetected = IsMoveInput || m_Input.Attack || m_Input.Aim || m_Input.JumpInput;
             if (m_IsGrounded && !inputDetected)
             {
                 m_IdleTimer += Time.deltaTime;
@@ -746,6 +746,11 @@ namespace Gamekit3D
             m_VerticalSpeed = 0f;
             m_Respawning = true;
             m_Damageable.isInvulnerable = true;
+        }
+
+        public void ToggleAim(bool b)
+        {
+            m_Animator.SetBool("IsAiming", b);
         }
     }
 }
