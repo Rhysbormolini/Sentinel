@@ -11,6 +11,8 @@ public class PlayerInput : MonoBehaviour
         get { return s_Instance; }
     }
 
+    AbilitiesPrototype prototypeScript;
+
     protected static PlayerInput s_Instance;
 
     [HideInInspector]
@@ -75,7 +77,19 @@ public class PlayerInput : MonoBehaviour
         else if (s_Instance != this)
             throw new UnityException("There cannot be more than one PlayerInput script.  The instances are " + s_Instance.name + " and " + name + ".");
 
-        Spartan = new Actions();
+        if (TryGetComponent(out AbilitiesPrototype prototype))
+        {
+            if (prototype)
+            {
+                Debug.Log($"Found {prototypeScript}");
+                prototypeScript = prototype;
+            }
+            else
+            {
+                Debug.Log("Unable to find script");
+                return;
+            }
+        }
     }
 
 
@@ -124,8 +138,9 @@ public class PlayerInput : MonoBehaviour
 
     private void OnEnable()
     {
-        if (Spartan != null)
+        if (Spartan == null)
         {
+            Spartan = new Actions();
             Spartan.Player.Roll.performed += i => 
             {
                 //PlayerController.instance.m_Animator.CrossFade("Roll", 0.2f); 
@@ -136,6 +151,53 @@ public class PlayerInput : MonoBehaviour
             { 
                 moveInput = i.ReadValue<Vector2>(); 
 
+            };
+
+            //Button inputs
+            Spartan.Player.Ability1.performed += i =>
+            {
+                if (prototypeScript.CurrentAbility != 1)
+                {
+                    prototypeScript.CurrentAbility = 1;
+                    prototypeScript.ability[0].isSelected = true;
+                    prototypeScript.ability[1].isSelected = false;
+                    prototypeScript.ability[2].isSelected = false;
+                }
+                else
+                {
+                    prototypeScript.CurrentAbility = 0;
+                    prototypeScript.ability[0].isSelected = false;
+                }
+            };
+            Spartan.Player.Ability2.performed += i =>
+            {
+                if (prototypeScript.CurrentAbility != 2)
+                {
+                    prototypeScript.CurrentAbility = 2;
+                    prototypeScript.ability[0].isSelected = false;
+                    prototypeScript.ability[1].isSelected = true;
+                    prototypeScript.ability[2].isSelected = false;
+                }
+                else
+                {
+                    prototypeScript.CurrentAbility = 0;
+                    prototypeScript.ability[1].isSelected = false;
+                }
+            };
+            Spartan.Player.Ability3.performed += i =>
+            {
+                if (prototypeScript.CurrentAbility != 3)
+                {
+                    prototypeScript.CurrentAbility = 3;
+                    prototypeScript.ability[0].isSelected = false;
+                    prototypeScript.ability[1].isSelected = false;
+                    prototypeScript.ability[2].isSelected = true;
+                }
+                else
+                {
+                    prototypeScript.CurrentAbility = 0;
+                    prototypeScript.ability[2].isSelected = false;
+                }
             };
         }
         Spartan.Enable();
