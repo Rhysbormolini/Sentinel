@@ -27,6 +27,13 @@ namespace Gamekit3D
         public RandomAudioPlayer bouncePlayer;
 
         protected float m_SinceFired;
+        protected float m_allowCollisionAfterShoot
+        {
+            get
+            {
+                return .2f / (projectileSpeed / 6);
+            }
+        }
 
         protected RangeWeapon m_Shooter;
         protected Rigidbody m_RigidBody;
@@ -41,6 +48,11 @@ namespace Gamekit3D
             
             m_RigidBody = GetComponent<Rigidbody>();
             m_RigidBody.detectCollisions = false;
+
+            if (m_allowCollisionAfterShoot > 0.01f)
+            {
+                m_RigidBody.detectCollisions = false;
+            }
 
             m_VFXInstance = Instantiate(explosionVFX);
             m_VFXInstance.gameObject.SetActive(false);
@@ -72,7 +84,7 @@ namespace Gamekit3D
         {
             m_SinceFired += Time.deltaTime;
 
-            if (m_SinceFired > 0.2f)
+            if (m_SinceFired > m_allowCollisionAfterShoot)
             {
                 //we only enable collision after half a second to get it time to clear the grenadier body 
                 m_RigidBody.detectCollisions = true;

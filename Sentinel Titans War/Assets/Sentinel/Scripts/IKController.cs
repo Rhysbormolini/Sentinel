@@ -21,11 +21,16 @@ public class IKController : MonoBehaviour
     {
         _animator.SetLookAtWeight(Weight, BodyWeight, HeadWeight);
 
-        //float deltaAngle = Vector3.SignedAngle(transform.forward, LookTarget - transform.position, transform.up);
-        //if (Mathf.Abs(deltaAngle) > MaxAngle)
-        //{
-        //    transform.Rotate(new Vector3(0, deltaAngle, 0), Space.Self);
-        //}
+        if (Weight == 0)
+        {
+            return;
+        }
+
+        float deltaAngle = Vector3.SignedAngle(transform.forward, LookTarget - transform.position, transform.up);
+        if (Mathf.Abs(deltaAngle) > MaxAngle)
+        {
+            transform.Rotate(new Vector3(0, deltaAngle, 0), Space.Self);
+        }
         _animator.SetLookAtPosition(LookTarget);
     }
 
