@@ -6,6 +6,7 @@ namespace Gamekit3D
 {
     public class ReplaceWithRagdoll : MonoBehaviour
     {
+        public Transform characterModel;
         public GameObject ragdollPrefab;
 
         public void Replace()
@@ -21,7 +22,7 @@ namespace Gamekit3D
             t.forceToAdd = baseController.externalForce;
 
             Transform ragdollCurrent = ragdollInstance.transform;
-            Transform current = transform;
+            Transform current = characterModel;
             bool first = true;
 
             while (current != null && ragdollCurrent != null)
