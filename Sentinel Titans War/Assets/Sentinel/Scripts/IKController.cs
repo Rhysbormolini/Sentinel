@@ -26,12 +26,12 @@ public class IKController : MonoBehaviour
             return;
         }
 
-        float deltaAngle = Vector3.SignedAngle(transform.forward, LookTarget - transform.position, transform.up);
-        if (Mathf.Abs(deltaAngle) > MaxAngle)
-        {
-            transform.Rotate(new Vector3(0, deltaAngle, 0), Space.Self);
-        }
-        _animator.SetLookAtPosition(LookTarget);
+		float deltaAngle = Vector3.SignedAngle(transform.forward, LookTarget - transform.position, transform.up);
+		if (Mathf.Abs(deltaAngle) > MaxAngle)
+		{
+			transform.Rotate(new Vector3(0, deltaAngle, 0), Space.Self);
+		}
+		_animator.SetLookAtPosition(LookTarget);
     }
 
 }
