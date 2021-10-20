@@ -1264,7 +1264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterModel: {fileID: 7170835913897609512}
-  ragdollPrefab: {fileID: 8802953022159997448, guid: cbac920021513b34b984a476cdd11bef,
+  ragdollPrefab: {fileID: 8802953022159997448, guid: 9fc5e0de73a4bcc49846897e2f56d106,
     type: 3}
 --- !u!65 &7162091304426369790
 BoxCollider:
