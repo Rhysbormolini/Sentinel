@@ -86,11 +86,5 @@ namespace Gamekit3D
             controllerCamera.Priority = inputChoice == InputChoice.Controller ? 1 : 0;
         }
 
-
-        public void ToggleAim(bool b)
-        {
-            var aim = Current.GetComponent<CameraAim>();
-            aim.enabled = b;
-        }
     } 
 }

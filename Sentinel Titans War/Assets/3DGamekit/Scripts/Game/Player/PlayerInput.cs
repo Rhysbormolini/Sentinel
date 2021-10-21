@@ -12,10 +12,6 @@ public class PlayerInput : MonoBehaviour
         get { return s_Instance; }
     }
 
-    public UnityEvent OnAimActivate;
-    public UnityEvent OnAimDeactive;
-
-    AbilitiesPrototype prototypeScript;
 
     protected static PlayerInput s_Instance;
 
@@ -63,11 +59,6 @@ public class PlayerInput : MonoBehaviour
         get { return m_Attack && !playerControllerInputBlocked && !m_ExternalInputBlocked; }
     }
 
-    public bool Aim
-    {
-        get { return m_Aim && !playerControllerInputBlocked && !m_ExternalInputBlocked; }
-    }
-
     public bool Pause
     {
         get { return m_Pause; }
@@ -86,27 +77,11 @@ public class PlayerInput : MonoBehaviour
             s_Instance = this;
         else if (s_Instance != this)
             throw new UnityException("There cannot be more than one PlayerInput script.  The instances are " + s_Instance.name + " and " + name + ".");
-
-        if (TryGetComponent(out AbilitiesPrototype prototype))
-        {
-            if (prototype)
-            {
-                Debug.Log($"Found {prototypeScript}");
-                prototypeScript = prototype;
-            }
-            else
-            {
-                Debug.Log("Unable to find script");
-                return;
-            }
-        }
     }
 
 
     void Update()
     {
-        //Spartan.Player.Move.performed += i => moveInput = i.ReadValue<Vector3>();
-        
         m_Movement.Set(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         m_Camera.Set(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
         m_Jump = Input.GetButton("Jump");
@@ -117,20 +92,6 @@ public class PlayerInput : MonoBehaviour
                 StopCoroutine(m_AttackWaitCoroutine);
 
             m_AttackWaitCoroutine = StartCoroutine(AttackWait());
-        }
-
-        bool tempAim = m_Aim;
-        m_Aim = Input.GetButton("Fire2");
-        if (m_Aim != tempAim)
-        {
-            if (m_Aim)
-            {
-                OnAimActivate.Invoke();
-            }
-            else
-            {
-                OnAimDeactive.Invoke();
-            }
         }
 
         m_Pause = Input.GetButtonDown ("Pause");
@@ -167,7 +128,6 @@ public class PlayerInput : MonoBehaviour
             Spartan = new Actions();
             Spartan.Player.Roll.performed += i => 
             {
-                //PlayerController.instance.m_Animator.CrossFade("Roll", 0.2f); 
                 PlayerController.instance.canRoll = true;
             };
 
@@ -175,53 +135,6 @@ public class PlayerInput : MonoBehaviour
             { 
                 moveInput = i.ReadValue<Vector2>(); 
 
-            };
-
-            //Button inputs
-            Spartan.Player.Ability1.performed += i =>
-            {
-                if (prototypeScript.CurrentAbility != 1)
-                {
-                    prototypeScript.CurrentAbility = 1;
-                    prototypeScript.ability[0].isSelected = true;
-                    prototypeScript.ability[1].isSelected = false;
-                    prototypeScript.ability[2].isSelected = false;
-                }
-                else
-                {
-                    prototypeScript.CurrentAbility = 0;
-                    prototypeScript.ability[0].isSelected = false;
-                }
-            };
-            Spartan.Player.Ability2.performed += i =>
-            {
-                if (prototypeScript.CurrentAbility != 2)
-                {
-                    prototypeScript.CurrentAbility = 2;
-                    prototypeScript.ability[0].isSelected = false;
-                    prototypeScript.ability[1].isSelected = true;
-                    prototypeScript.ability[2].isSelected = false;
-                }
-                else
-                {
-                    prototypeScript.CurrentAbility = 0;
-                    prototypeScript.ability[1].isSelected = false;
-                }
-            };
-            Spartan.Player.Ability3.performed += i =>
-            {
-                if (prototypeScript.CurrentAbility != 3)
-                {
-                    prototypeScript.CurrentAbility = 3;
-                    prototypeScript.ability[0].isSelected = false;
-                    prototypeScript.ability[1].isSelected = false;
-                    prototypeScript.ability[2].isSelected = true;
-                }
-                else
-                {
-                    prototypeScript.CurrentAbility = 0;
-                    prototypeScript.ability[2].isSelected = false;
-                }
             };
         }
         Spartan.Enable();
