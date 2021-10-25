@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -908,6 +908,42 @@ MonoBehaviour:
     type: 3}
   lightningBallSpawnTransform: {fileID: 1477544094}
   lightningBallAbilityCoolDownTime: 1
+--- !u!114 &265399030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265399020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29618f033e575e4889803b62984e240, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagsToFind:
+  - Enemy
+  layerOfObstacles:
+    serializedVersion: 2
+    m_Bits: 8388608
+  screenMarginX: 0.8
+  screenMarginY: 0.1
+  range: 10
+  showDebug: 0
+  timeToChangeTarget: 0.25
+  strafeWhileLockOn: 0
+  aimImagePrefab: {fileID: 0}
+  aimImageContainer: {fileID: 0}
+  aimImageSize: {x: 30, y: 30}
+  hideSprite: 1
+  spriteHeight: 0.25
+  cameraHeightOffset: 0
+  lockSpeed: 0.5
+  onLockOnTarget:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnLockOnTarget:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &279519759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18748,6 +18784,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.0000000041909516
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601979054168293380, guid: a466da7d9c192e14bbe330fc3300165d,
+        type: 3}
+      propertyPath: m_ShowCustomSorter
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8602982698482294414, guid: a466da7d9c192e14bbe330fc3300165d,
         type: 3}
