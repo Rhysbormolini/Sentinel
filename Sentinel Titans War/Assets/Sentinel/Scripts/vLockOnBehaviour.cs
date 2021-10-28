@@ -22,7 +22,7 @@ namespace Gamekit3D
         [Tooltip("Use this to set a margin of Aim point ")]
         public float screenMarginY = 0.1f;
         [Tooltip("Range of the search for targets")]
-        public float range = 10f;
+        public float range = 200f;
         [Tooltip("Show the Gizmos and helpers")]
         public bool showDebug;
         public float timeToChangeTarget = 0.25f;
@@ -253,7 +253,7 @@ namespace Gamekit3D
             }
 
             var listPrimary = new List<Transform>();
-            var targets = Physics.SphereCastAll(watcher.position, range, watcher.forward, .01f);
+            var targets = Physics.OverlapSphere(watcher.position, range);
             for (int i = 0; i < targets.Length; i++)
             {
                 var hitOther = targets[i];
@@ -262,7 +262,7 @@ namespace Gamekit3D
                     if (isCharacterAlive(hitOther.transform.GetComponent<Transform>()))
                     {
                         RaycastHit hit;
-                        var boundPoints = BoundPoints(hitOther.collider);
+                        var boundPoints = BoundPoints(hitOther);
                         for (int a = 0; a < boundPoints.Length; a++)
                         {
                             var point = boundPoints[a];
