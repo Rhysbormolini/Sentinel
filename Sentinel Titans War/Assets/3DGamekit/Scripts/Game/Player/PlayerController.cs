@@ -223,6 +223,15 @@ namespace Gamekit3D
             m_PreviouslyGrounded = m_IsGrounded;
 
             HandleRolling();
+
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                maxForwardSpeed = 12f;
+            }
+            else
+            {
+                maxForwardSpeed = 8f;
+            }
         }
 
         void HandleRolling()
