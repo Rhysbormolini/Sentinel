@@ -2,6 +2,7 @@ using UnityEngine;
 using Gamekit3D.Message;
 using System.Collections;
 using UnityEngine.XR.WSA;
+using System;
 
 namespace Gamekit3D
 {
@@ -235,46 +236,51 @@ namespace Gamekit3D
         }
 
         void HandleRolling()
-        {
-            float v = 0;
-            float h = 0;
+        {            
+            //float v = 0;
+            //float h = 0;
 
-            if (movement.x > 0) //Right
-            {
-                h = 1;
-            }
-            else if (movement.x < 0) //Left
-            {
-                h = -1;
-            }
-            else
-            {
-                h = 0;
-            }
+            //if (movement.x > 0) //Right
+            //{
+            //    h = 1;
+            //}
+            //else if (movement.x < 0) //Left
+            //{
+            //    h = -1;
+            //}
+            //else
+            //{
+            //    h = 0;
+            //}
 
 
-            if (movement.y > 0) //Forward
-            {
-                v = 1;
-            }
-            else if (movement.y < 0) //Backwards
-            {
-                v = -1;
-            }
-            else
-            {
-                v = 0;
-            }
+            //if (movement.y > 0) //Forward
+            //{
+            //    v = 1;
+            //}
+            //else if (movement.y < 0) //Backwards
+            //{
+            //    v = -1;
+            //}
+            //else
+            //{
+            //    v = 0;
+            //}
 
-            m_Animator.SetFloat("Vertical", v, 0.1f, Time.deltaTime);
-            m_Animator.SetFloat("Horizontal", h, 0.1f, Time.deltaTime);
+            //m_Animator.SetFloat("Vertical", v, 0.1f, Time.deltaTime);
+            //m_Animator.SetFloat("Horizontal", h, 0.1f, Time.deltaTime);
 
             if (canRoll && m_IsGrounded)
             {
+                m_Animator.SetBool("Roll", true);
                 m_Animator.applyRootMotion = true;
                 m_Animator.CrossFade("Rolling", 0.2f);
             }
-            else return;
+        }
+
+        public void Pee()
+        {
+            m_Animator.SetBool("Roll", false);
         }
 
         private void LateUpdate()
@@ -316,7 +322,7 @@ namespace Gamekit3D
         // Called each physics step with a parameter based on the return value of IsWeaponEquiped.
         void EquipMeleeWeapon(bool equip)
         {
-            meleeWeapon.gameObject.SetActive(equip);
+            //meleeWeapon.gameObject.SetActive(equip);
             m_InAttack = false;
             m_InCombo = equip;
 

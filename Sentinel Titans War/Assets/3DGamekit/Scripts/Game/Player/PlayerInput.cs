@@ -33,7 +33,7 @@ public class PlayerInput : MonoBehaviour
     {
         get
         {
-            if(playerControllerInputBlocked || m_ExternalInputBlocked)
+            if(playerControllerInputBlocked || m_ExternalInputBlocked || PlayerController.instance.canRoll)
                 return Vector2.zero;
             return m_Movement;
         }
@@ -134,7 +134,6 @@ public class PlayerInput : MonoBehaviour
             Spartan.Player.Move.performed += i => 
             { 
                 moveInput = i.ReadValue<Vector2>(); 
-
             };
         }
         Spartan.Enable();
