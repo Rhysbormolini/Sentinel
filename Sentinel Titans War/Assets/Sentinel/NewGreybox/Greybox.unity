@@ -984,42 +984,6 @@ MonoBehaviour:
     type: 3}
   lightningBallSpawnTransform: {fileID: 1477544094}
   lightningBallAbilityCoolDownTime: 1
---- !u!114 &265399030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 265399020}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c29618f033e575e4889803b62984e240, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tagsToFind:
-  - Enemy
-  layerOfObstacles:
-    serializedVersion: 2
-    m_Bits: 8388608
-  screenMarginX: 0.8
-  screenMarginY: 0.1
-  range: 10
-  showDebug: 0
-  timeToChangeTarget: 0.25
-  strafeWhileLockOn: 0
-  aimImagePrefab: {fileID: 0}
-  aimImageContainer: {fileID: 0}
-  aimImageSize: {x: 30, y: 30}
-  hideSprite: 1
-  spriteHeight: 0.25
-  cameraHeightOffset: 0
-  lockSpeed: 0.5
-  onLockOnTarget:
-    m_PersistentCalls:
-      m_Calls: []
-  onUnLockOnTarget:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &279519759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2212,9 +2176,39 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5355537330501112621, guid: eb80d377ac912bb40899105ee12a896e,
         type: 3}
+      propertyPath: rollInvulnerabiltyTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355537330501112621, guid: eb80d377ac912bb40899105ee12a896e,
+        type: 3}
+      propertyPath: OnRoll.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355537330501112621, guid: eb80d377ac912bb40899105ee12a896e,
+        type: 3}
+      propertyPath: OnRoll.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355537330501112621, guid: eb80d377ac912bb40899105ee12a896e,
+        type: 3}
+      propertyPath: OnRoll.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1992183648}
+    - target: {fileID: 5355537330501112621, guid: eb80d377ac912bb40899105ee12a896e,
+        type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1730491399}
+    - target: {fileID: 5355537330501112621, guid: eb80d377ac912bb40899105ee12a896e,
+        type: 3}
+      propertyPath: OnRoll.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355537330501112621, guid: eb80d377ac912bb40899105ee12a896e,
+        type: 3}
+      propertyPath: OnRoll.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
     - target: {fileID: 5355537330501112621, guid: eb80d377ac912bb40899105ee12a896e,
         type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -2242,8 +2236,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5355537330501112621, guid: eb80d377ac912bb40899105ee12a896e,
         type: 3}
+      propertyPath: OnRoll.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355537330501112621, guid: eb80d377ac912bb40899105ee12a896e,
+        type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Gamekit3D.HealthUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355537330501112621, guid: eb80d377ac912bb40899105ee12a896e,
+        type: 3}
+      propertyPath: OnRoll.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5355537330501112621, guid: eb80d377ac912bb40899105ee12a896e,
         type: 3}
@@ -2264,6 +2268,11 @@ PrefabInstance:
         type: 3}
       propertyPath: OnBecomeVulnerable.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355537330501112621, guid: eb80d377ac912bb40899105ee12a896e,
+        type: 3}
+      propertyPath: OnRoll.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5458555891740766626, guid: eb80d377ac912bb40899105ee12a896e,
         type: 3}
@@ -3229,7 +3238,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28466
+  m_Name: pb_Mesh23218
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6124,7 +6133,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28602
+  m_Name: pb_Mesh23354
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19654,6 +19663,12 @@ Transform:
   m_Father: {fileID: 2031840292}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1992183648 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5460540505176716046, guid: eb80d377ac912bb40899105ee12a896e,
+    type: 3}
+  m_PrefabInstance: {fileID: 648232689}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1994494314
 GameObject:
   m_ObjectHideFlags: 0
@@ -20104,6 +20119,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 208060536}
     m_Modifications:
+    - target: {fileID: 7069381244232375794, guid: cf9a7d5565c1e0743b1979a4c3ae1183,
+        type: 3}
+      propertyPath: attackDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069381244232375794, guid: cf9a7d5565c1e0743b1979a4c3ae1183,
+        type: 3}
+      propertyPath: timeToStopPursuit
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7170835913897609512, guid: cf9a7d5565c1e0743b1979a4c3ae1183,
         type: 3}
       propertyPath: m_RootOrder

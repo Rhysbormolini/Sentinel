@@ -13,6 +13,7 @@ namespace Gamekit3D
         public int maxHitPoints;
         [Tooltip("Time that this gameObject is invulnerable for, after receiving damage.")]
         public float invulnerabiltyTime;
+        public float rollInvulnerabiltyTime;
 
 
         [Tooltip("The angle from the which that damageable is hitable. Always in the world XZ plane, with the forward being rotate by hitForwardRoation")]
@@ -24,15 +25,17 @@ namespace Gamekit3D
         public float hitForwardRotation = 360.0f;
 
         public bool isInvulnerable { get; set; }
+        public bool InvulnerableRoll { get; set; }
         public int currentHitPoints { get; private set; }
 
-        public UnityEvent OnDeath, OnReceiveDamage, OnHitWhileInvulnerable, OnBecomeVulnerable, OnResetDamage;
+        public UnityEvent OnDeath, OnReceiveDamage, OnHitWhileInvulnerable, OnBecomeVulnerable, OnResetDamage, OnRoll;
 
         [Tooltip("When this gameObject is damaged, these other gameObjects are notified.")]
         [EnforceType(typeof(Message.IMessageReceiver))]
         public List<MonoBehaviour> onDamageMessageReceivers;
 
         protected float m_timeSinceLastHit = 0.0f;
+        protected float m_timeSinceLastRoll = 0.0f;
         protected Collider m_Collider;
 
         System.Action schedule;
@@ -45,14 +48,34 @@ namespace Gamekit3D
 
         void Update()
         {
-            if (isInvulnerable)
+            if (PlayerController.instance.canRoll == true)
+			{
+                isInvulnerable = true;
+                InvulnerableRoll = true;
+                OnRoll.Invoke();
+            }
+
+            if (isInvulnerable == true)
             {
-                m_timeSinceLastHit += Time.deltaTime;
-                if (m_timeSinceLastHit > invulnerabiltyTime)
+                if (InvulnerableRoll == true)
                 {
-                    m_timeSinceLastHit = 0.0f;
-                    isInvulnerable = false;
-                    OnBecomeVulnerable.Invoke();
+                    m_timeSinceLastRoll += Time.deltaTime;
+                    if (m_timeSinceLastRoll > rollInvulnerabiltyTime)
+                    {
+                        m_timeSinceLastRoll = 0.0f;
+                        InvulnerableRoll = false;
+                        OnBecomeVulnerable.Invoke();
+                    }
+                }
+                else
+                {
+                    m_timeSinceLastHit += Time.deltaTime;
+                    if (m_timeSinceLastHit > invulnerabiltyTime)
+                    {
+                        m_timeSinceLastHit = 0.0f;
+                        isInvulnerable = false;
+                        OnBecomeVulnerable.Invoke();
+                    }
                 }
             }
         }

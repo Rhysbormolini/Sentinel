@@ -129,6 +129,7 @@ public class PlayerInput : MonoBehaviour
             Spartan.Player.Roll.performed += i => 
             {
                 PlayerController.instance.canRoll = true;
+                
             };
 
             Spartan.Player.Move.performed += i => 

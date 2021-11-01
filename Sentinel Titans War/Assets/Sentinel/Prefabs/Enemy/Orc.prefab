@@ -1200,7 +1200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93e09843a5c1c344f9a06661baac93cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDistance: 3
+  attackDistance: 2
   meleeWeapon: {fileID: 7173520066375949528}
   playerScanner:
     heightOffset: 1
@@ -1210,7 +1210,7 @@ MonoBehaviour:
     viewBlockerLayerMask:
       serializedVersion: 2
       m_Bits: 2147483648
-  timeToStopPursuit: 3
+  timeToStopPursuit: 6
   attackAudio: {fileID: 7068638778893231228}
   frontStepAudio: {fileID: 7067687341213420448}
   backStepAudio: {fileID: 7069198257533003744}
