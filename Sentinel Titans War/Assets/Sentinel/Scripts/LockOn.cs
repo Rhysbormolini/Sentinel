@@ -35,13 +35,13 @@ namespace Gamekit3D
 		public void HandleLockOn()
 		{
 			RaycastHit hit;
-			targets = Physics.SphereCast(transform.position, playerVisionRadius, transform.forward, out hit);
+			//targets = Physics.SphereCast(transform.position, playerVisionRadius, transform.forward, out hit);
 		
 			
 			
-			nearestEnemy = targets
-			.OrderBy(t => Vector3.Distance(transform.position, t.transform.position)
-			.FirstOrDefault();
+			//nearestEnemy = targets
+			//.OrderBy(t => Vector3.Distance(transform.position, t.transform.position)
+			//.FirstOrDefault();
 		}
 
 		public void SwapTargets()
