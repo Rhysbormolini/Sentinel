@@ -9,14 +9,13 @@ namespace Gamekit3D
     public class LockOn : MonoBehaviour
     {
         public float playerVisionRadius = 20f;
-        public List<GameObject> targets = new List<GameObject> { };
         public Transform nearestEnemy;
 		public Transform currentEnemy;
 		bool isLockingOn = false;
 		[SerializeField] LayerMask enemyLayer;
 
 
-		private void FixedUpdate()
+		private void Update()
 		{
 			if (Input.GetKeyDown(KeyCode.Tab))
 			{
@@ -34,14 +33,29 @@ namespace Gamekit3D
 
 		public void HandleLockOn()
 		{
-			RaycastHit hit;
-			//targets = Physics.SphereCast(transform.position, playerVisionRadius, transform.forward, out hit);
-		
-			
-			
-			//nearestEnemy = targets
-			//.OrderBy(t => Vector3.Distance(transform.position, t.transform.position)
-			//.FirstOrDefault();
+			RaycastHit[] targets = Physics.SphereCastAll(transform.position, playerVisionRadius, transform.forward);
+			float minDistance = Mathf.Infinity;
+			Transform closestEnemy = null;
+
+			for (int i = 0; i > targets.Length; i++)
+			{
+				float currDistance = (targets[i].transform.position - transform.position).magnitude;
+
+				if (currDistance < minDistance)
+				{
+					minDistance = currDistance;
+					closestEnemy = targets[i].transform;
+				}
+			}
+
+
+
+
+
+			// shoot out raycast in a sphere to find enemies within radius
+			// assisn them to the list
+			// sort through to find the closest 
+			// assign and lock the camera to the position 
 		}
 
 		public void SwapTargets()
