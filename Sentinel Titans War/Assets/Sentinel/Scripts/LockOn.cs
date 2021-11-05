@@ -11,9 +11,15 @@ namespace Gamekit3D
         public float playerVisionRadius = 20f;
         public Transform nearestEnemy;
 		public Transform currentEnemy;
-		bool isLockingOn = false;
+		public bool isLockingOn = false;
 		[SerializeField] LayerMask enemyLayer;
+		CameraSettings cam;
 
+		private void Awake()
+		{
+			cam = GetComponent<CameraSettings>();
+			currentEnemy = null;
+		}
 
 		private void Update()
 		{
@@ -45,12 +51,10 @@ namespace Gamekit3D
 				{
 					minDistance = currDistance;
 					closestEnemy = targets[i].transform;
+					Debug.Log("Closest Enemy is: " + closestEnemy.name);
+					currentEnemy = closestEnemy;
 				}
 			}
-
-
-
-
 
 			// shoot out raycast in a sphere to find enemies within radius
 			// assisn them to the list

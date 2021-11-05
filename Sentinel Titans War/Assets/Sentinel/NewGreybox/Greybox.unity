@@ -1136,6 +1136,25 @@ MonoBehaviour:
     type: 3}
   lightningBallSpawnTransform: {fileID: 1477544094}
   lightningBallAbilityCoolDownTime: 1
+--- !u!114 &265399030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265399020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f78594aec9ba5114e9b174691d193e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerVisionRadius: 20
+  nearestEnemy: {fileID: 0}
+  currentEnemy: {fileID: 0}
+  isLockingOn: 0
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 8388608
 --- !u!1001 &279519759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1196,6 +1215,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79d3ae4a02697af45a2eb0366b59066d, type: 3}
+--- !u!1 &313913997 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8571298581041744406, guid: a466da7d9c192e14bbe330fc3300165d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1914119437}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &313913998
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313913997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4044717213e31446939f7bd49c896ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
+  m_LookaheadTime: 0
+  m_LookaheadSmoothing: 0
+  m_LookaheadIgnoreY: 0
+  m_HorizontalDamping: 0.5
+  m_VerticalDamping: 0.5
+  m_ScreenX: 0.5
+  m_ScreenY: 0.5
+  m_DeadZoneWidth: 0
+  m_DeadZoneHeight: 0
+  m_SoftZoneWidth: 0.8
+  m_SoftZoneHeight: 0.8
+  m_BiasX: 0
+  m_BiasY: 0
+  m_CenterOnActivate: 1
 --- !u!4 &326804597 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5464819400964098445, guid: eb80d377ac912bb40899105ee12a896e,
@@ -20096,6 +20148,11 @@ PrefabInstance:
       propertyPath: m_ShowCustomSorter
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8602529292715662642, guid: a466da7d9c192e14bbe330fc3300165d,
+        type: 3}
+      propertyPath: m_BindingMode
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8602982698482294414, guid: a466da7d9c192e14bbe330fc3300165d,
         type: 3}
       propertyPath: follow
@@ -20106,7 +20163,13 @@ PrefabInstance:
       propertyPath: lookAt
       value: 
       objectReference: {fileID: 326804597}
-    m_RemovedComponents: []
+    - target: {fileID: 8602982698482294414, guid: a466da7d9c192e14bbe330fc3300165d,
+        type: 3}
+      propertyPath: allowRuntimeCameraSettingsChanges
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8601921416212123136, guid: a466da7d9c192e14bbe330fc3300165d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a466da7d9c192e14bbe330fc3300165d, type: 3}
 --- !u!1 &1950369099
 GameObject:

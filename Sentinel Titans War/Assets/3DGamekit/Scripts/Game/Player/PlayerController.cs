@@ -102,6 +102,8 @@ namespace Gamekit3D
         readonly int m_HashEllenCombo4 = Animator.StringToHash("EllenCombo4");
         readonly int m_HashEllenDeath = Animator.StringToHash("EllenDeath");
 
+        LockOn locked;
+
         // Tags
         readonly int m_HashBlockInput = Animator.StringToHash("BlockInput");
 
@@ -150,6 +152,7 @@ namespace Gamekit3D
             m_Input = GetComponent<PlayerInput>();
             m_Animator = GetComponent<Animator>();
             m_CharCtrl = GetComponent<CharacterController>();
+            locked = GetComponent<LockOn>();
 
             meleeWeapon.SetOwner(gameObject);
 
@@ -213,7 +216,7 @@ namespace Gamekit3D
             CalculateVerticalMovement();
 
             SetTargetRotation();
-
+            
             if (IsOrientationUpdated() && IsMoveInput)
                 UpdateOrientation();
 
