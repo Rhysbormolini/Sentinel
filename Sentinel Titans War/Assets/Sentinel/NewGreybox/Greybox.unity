@@ -1132,29 +1132,14 @@ MonoBehaviour:
     type: 3}
   tornadoSpawnTransform: {fileID: 1477544094}
   tornadoAbilityCoolDownTime: 5
+  tornadoAbilityCoolDown: 0
+  TornadoDamage: 0
   lightningBallProjectile: {fileID: 1007478696548341453, guid: 39165a5accc15b141958fa17dcc20d6b,
     type: 3}
   lightningBallSpawnTransform: {fileID: 1477544094}
   lightningBallAbilityCoolDownTime: 1
---- !u!114 &265399030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 265399020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f78594aec9ba5114e9b174691d193e08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerVisionRadius: 20
-  nearestEnemy: {fileID: 0}
-  currentEnemy: {fileID: 0}
-  isLockingOn: 0
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 8388608
+  lightningBallAbilityCoolDown: 0
+  lightningDamage: 0
 --- !u!1001 &279519759
 PrefabInstance:
   m_ObjectHideFlags: 0
