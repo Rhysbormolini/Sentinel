@@ -240,39 +240,6 @@ namespace Gamekit3D
 
         void HandleRolling()
         {            
-            //float v = 0;
-            //float h = 0;
-
-            //if (movement.x > 0) //Right
-            //{
-            //    h = 1;
-            //}
-            //else if (movement.x < 0) //Left
-            //{
-            //    h = -1;
-            //}
-            //else
-            //{
-            //    h = 0;
-            //}
-
-
-            //if (movement.y > 0) //Forward
-            //{
-            //    v = 1;
-            //}
-            //else if (movement.y < 0) //Backwards
-            //{
-            //    v = -1;
-            //}
-            //else
-            //{
-            //    v = 0;
-            //}
-
-            //m_Animator.SetFloat("Vertical", v, 0.1f, Time.deltaTime);
-            //m_Animator.SetFloat("Horizontal", h, 0.1f, Time.deltaTime);
-
             if (canRoll && m_IsGrounded)
             {
                 m_Animator.SetBool("Roll", true);

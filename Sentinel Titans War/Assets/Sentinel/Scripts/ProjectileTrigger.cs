@@ -1,39 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 namespace Gamekit3D
 {
     public class ProjectileTrigger : MonoBehaviour
     {
+        public Animator m_Animator;
+
         [Header("Tornado")]
         public GameObject tornadoProjectile;    // this is a reference to your projectile prefab
         public Transform tornadoSpawnTransform; // this is a reference to the transform where the prefab will spawn
         [SerializeField] float tornadoAbilityCoolDownTime;
         [SerializeField] float tornadoAbilityCoolDown;
-        public int TornadoDamage;
-
 
         [Header("Chain Lightning")]
         public GameObject lightningBallProjectile;    // this is a reference to your projectile prefab
         public Transform lightningBallSpawnTransform; // this is a reference to the transform where the prefab will spawn
         [SerializeField] float lightningBallAbilityCoolDownTime;
         [SerializeField] float lightningBallAbilityCoolDown;
-        public int lightningDamage;
 
-        
+        [Header("Lightning Storm")]
+        public GameObject lightningStormProjectile;    // this is a reference to your projectile prefab
+        public Transform lightningStormSpawnTransform; // this is a reference to the transform where the prefab will spawn
+        [SerializeField] float lightningStormAbilityCoolDownTime;
+        [SerializeField] float lightningStormAbilityCoolDown;
+        public LayerMask layerMask;
 
-        private void Awake()
-        {
-            tornadoProjectile.gameObject.GetComponent<ContactDamager>();
-    
-    }
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Q) && tornadoAbilityCoolDown <= 0)
             {
-                //m_Animator.Play("TornadoAnim");
-                Instantiate(tornadoProjectile, tornadoSpawnTransform.position, tornadoSpawnTransform.rotation);
+                m_Animator.Play("TornadoAnim");
+                Instantiate(tornadoProjectile, tornadoSpawnTransform.position, Camera.main.transform.rotation);
                 tornadoAbilityCoolDown = tornadoAbilityCoolDownTime;
             }
 
@@ -44,7 +44,7 @@ namespace Gamekit3D
 
             if (Input.GetKeyDown(KeyCode.E) && lightningBallAbilityCoolDown <= 0)
             {
-                Instantiate(lightningBallProjectile, lightningBallSpawnTransform.position, lightningBallSpawnTransform.rotation);
+                Instantiate(lightningBallProjectile, lightningBallSpawnTransform.position, Camera.main.transform.rotation);
                 lightningBallAbilityCoolDown = lightningBallAbilityCoolDownTime;
             }
 
@@ -52,6 +52,31 @@ namespace Gamekit3D
             {
                 lightningBallAbilityCoolDown -= Time.deltaTime;
             }
+
+            if (Input.GetKeyDown(KeyCode.R) && lightningStormAbilityCoolDown <= 0)
+            {
+                Instantiate(lightningStormProjectile, lightningStormSpawnTransform.position, transform.rotation);
+                lightningStormAbilityCoolDown = lightningStormAbilityCoolDownTime;
+                //StunEnemies();
+                
+            }
+
+            if (lightningStormAbilityCoolDown > 0)
+            {
+                lightningStormAbilityCoolDown -= Time.deltaTime;
+            }
         }
-    }
+
+  //      private void StunEnemies()
+		//{
+  //          float radius = lightningStormProjectile.GetComponent<SphereCollider>().radius;
+
+  //          Collider[] targets = Physics.OverlapSphere(tornadoSpawnTransform.position, radius * 10, layerMask);
+
+  //          foreach (Collider collider in targets)
+		//	{
+  //              collider.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+		//	}
+		//}
+	}
 }
