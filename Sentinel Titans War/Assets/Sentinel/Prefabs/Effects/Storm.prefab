@@ -9781,7 +9781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isStorm: 1
   m_Speed: 10
-  m_Lifespan: 3
+  m_Lifespan: 7
 --- !u!114 &644666584396927977
 MonoBehaviour:
   m_ObjectHideFlags: 0
