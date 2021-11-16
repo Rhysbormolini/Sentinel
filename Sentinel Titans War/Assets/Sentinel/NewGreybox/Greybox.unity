@@ -1961,9 +1961,6 @@ MonoBehaviour:
   lightningStormSpawnTransform: {fileID: 1449797076}
   lightningStormAbilityCoolDownTime: 10
   lightningStormAbilityCoolDown: 0
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!65 &265399030
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2065,6 +2062,7 @@ MonoBehaviour:
   pickUpEffect: {fileID: 6912666409620177924, guid: de5f15c226ad75446ad66d689043778d,
     type: 3}
   animator: {fileID: 265399027}
+  abilityTag: Ball
 --- !u!1001 &308361267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2193,6 +2191,7 @@ MonoBehaviour:
   pickUpEffect: {fileID: 6912666409620177924, guid: de5f15c226ad75446ad66d689043778d,
     type: 3}
   animator: {fileID: 265399027}
+  abilityTag: Tornado
 --- !u!1 &343812673
 GameObject:
   m_ObjectHideFlags: 0
@@ -4892,6 +4891,7 @@ MonoBehaviour:
   pickUpEffect: {fileID: 6912666409620177924, guid: de5f15c226ad75446ad66d689043778d,
     type: 3}
   animator: {fileID: 265399027}
+  abilityTag: Storm
 --- !u!1 &885373789
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,8 @@ namespace Gamekit3D
 		public Transform player;
 		public GameObject pickUpEffect;
 		public Animator animator;
-
+		public string abilityTag;
+		
 		void OnTriggerEnter(Collider other)
 		{
 			if (other.CompareTag("Player"))
@@ -26,7 +27,20 @@ namespace Gamekit3D
 			animator.Play("PowerUp");
 
 			// apply efect to player
+			switch(abilityTag)
+			{
+				case "Tornado":
+					ProjectileTrigger.tornadoUnlocked = true;
+					break;
 
+				case "Ball":
+					ProjectileTrigger.ballUnlocked = true;
+					break;
+
+				case "Storm":
+					ProjectileTrigger.stormUnlocked = true;
+					break;
+			}
 
 			//Destroy pickup
 			Destroy(gameObject);

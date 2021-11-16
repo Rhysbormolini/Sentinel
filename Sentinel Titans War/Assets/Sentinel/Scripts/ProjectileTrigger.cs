@@ -7,29 +7,30 @@ namespace Gamekit3D
 {
     public class ProjectileTrigger : MonoBehaviour
     {
+        public static bool stormUnlocked;
+        public static bool ballUnlocked;
+        public static bool tornadoUnlocked;
         public Animator m_Animator;
 
+
         [Header("Tornado")]
-        public static bool tornadoUnlocked;
         public GameObject tornadoProjectile;    // this is a reference to your projectile prefab
         public Transform tornadoSpawnTransform; // this is a reference to the transform where the prefab will spawn
         [SerializeField] float tornadoAbilityCoolDownTime;
         [SerializeField] float tornadoAbilityCoolDown;
 
         [Header("Chain Lightning")]
-        public static bool ballUnlocked;
         public GameObject lightningBallProjectile;    // this is a reference to your projectile prefab
         public Transform lightningBallSpawnTransform; // this is a reference to the transform where the prefab will spawn
         [SerializeField] float lightningBallAbilityCoolDownTime;
         [SerializeField] float lightningBallAbilityCoolDown;
 
         [Header("Lightning Storm")]
-        public static bool stormUnlocked;
         public GameObject lightningStormProjectile;    // this is a reference to your projectile prefab
         public Transform lightningStormSpawnTransform; // this is a reference to the transform where the prefab will spawn
         [SerializeField] float lightningStormAbilityCoolDownTime;
         [SerializeField] float lightningStormAbilityCoolDown;
-        public LayerMask layerMask;
+        
 
         private void Update()
         {
