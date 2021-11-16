@@ -6,6 +6,9 @@ TagManager:
   tags:
   - FlythroughCam
   - Enemy
+  - Tornado
+  - Ball
+  - Storm
   layers:
   - Default
   - TransparentFX

@@ -10,18 +10,21 @@ namespace Gamekit3D
         public Animator m_Animator;
 
         [Header("Tornado")]
+        public static bool tornadoUnlocked;
         public GameObject tornadoProjectile;    // this is a reference to your projectile prefab
         public Transform tornadoSpawnTransform; // this is a reference to the transform where the prefab will spawn
         [SerializeField] float tornadoAbilityCoolDownTime;
         [SerializeField] float tornadoAbilityCoolDown;
 
         [Header("Chain Lightning")]
+        public static bool ballUnlocked;
         public GameObject lightningBallProjectile;    // this is a reference to your projectile prefab
         public Transform lightningBallSpawnTransform; // this is a reference to the transform where the prefab will spawn
         [SerializeField] float lightningBallAbilityCoolDownTime;
         [SerializeField] float lightningBallAbilityCoolDown;
 
         [Header("Lightning Storm")]
+        public static bool stormUnlocked;
         public GameObject lightningStormProjectile;    // this is a reference to your projectile prefab
         public Transform lightningStormSpawnTransform; // this is a reference to the transform where the prefab will spawn
         [SerializeField] float lightningStormAbilityCoolDownTime;
@@ -30,7 +33,7 @@ namespace Gamekit3D
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Q) && tornadoAbilityCoolDown <= 0)
+            if (Input.GetKeyDown(KeyCode.Q) && tornadoAbilityCoolDown <= 0 && tornadoUnlocked == true)
             {
                 m_Animator.Play("TornadoAnim");
                 Instantiate(tornadoProjectile, tornadoSpawnTransform.position, Camera.main.transform.rotation);
@@ -42,7 +45,7 @@ namespace Gamekit3D
                 tornadoAbilityCoolDown -= Time.deltaTime;
             }
 
-            if (Input.GetKeyDown(KeyCode.E) && lightningBallAbilityCoolDown <= 0)
+            if (Input.GetKeyDown(KeyCode.E) && lightningBallAbilityCoolDown <= 0 && ballUnlocked == true)
             {
                 m_Animator.Play("ZapZapAnim");
                 Instantiate(lightningBallProjectile, lightningBallSpawnTransform.position, Camera.main.transform.rotation);
@@ -54,7 +57,7 @@ namespace Gamekit3D
                 lightningBallAbilityCoolDown -= Time.deltaTime;
             }
 
-            if (Input.GetKeyDown(KeyCode.R) && lightningStormAbilityCoolDown <= 0)
+            if (Input.GetKeyDown(KeyCode.R) && lightningStormAbilityCoolDown <= 0 && stormUnlocked == true)
             {
                 m_Animator.Play("StormAnim");
                 Instantiate(lightningStormProjectile, lightningStormSpawnTransform.position, transform.rotation);
