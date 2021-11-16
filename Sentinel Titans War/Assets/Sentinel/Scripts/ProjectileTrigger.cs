@@ -44,6 +44,7 @@ namespace Gamekit3D
 
             if (Input.GetKeyDown(KeyCode.E) && lightningBallAbilityCoolDown <= 0)
             {
+                m_Animator.Play("ZapZapAnim");
                 Instantiate(lightningBallProjectile, lightningBallSpawnTransform.position, Camera.main.transform.rotation);
                 lightningBallAbilityCoolDown = lightningBallAbilityCoolDownTime;
             }
@@ -55,6 +56,7 @@ namespace Gamekit3D
 
             if (Input.GetKeyDown(KeyCode.R) && lightningStormAbilityCoolDown <= 0)
             {
+                m_Animator.Play("StormAnim");
                 Instantiate(lightningStormProjectile, lightningStormSpawnTransform.position, transform.rotation);
                 lightningStormAbilityCoolDown = lightningStormAbilityCoolDownTime;
                 //StunEnemies();
