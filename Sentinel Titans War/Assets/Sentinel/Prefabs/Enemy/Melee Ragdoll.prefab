@@ -6762,7 +6762,7 @@ GameObject:
   - component: {fileID: 5644091565579357501}
   - component: {fileID: 7490907642896604126}
   m_Layer: 20
-  m_Name: Orc Ragdoll
+  m_Name: Melee Ragdoll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
