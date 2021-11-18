@@ -25,6 +25,8 @@ public class PlayerInput : MonoBehaviour
     protected bool m_Aim;
     protected bool m_Pause;
     protected bool m_ExternalInputBlocked;
+    [SerializeField] float rollCoolDown;
+    [SerializeField] float rollCoolDownTime;
 
     Actions Spartan;
     Vector3 moveInput;
@@ -95,6 +97,11 @@ public class PlayerInput : MonoBehaviour
         }
 
         m_Pause = Input.GetButtonDown ("Pause");
+
+        if (rollCoolDown > 0)
+        {
+            rollCoolDown -= Time.deltaTime;
+        }
     }
 
     IEnumerator AttackWait()
@@ -128,8 +135,11 @@ public class PlayerInput : MonoBehaviour
             Spartan = new Actions();
             Spartan.Player.Roll.performed += i => 
             {
-                PlayerController.instance.canRoll = true;
-                
+                if (rollCoolDown <= 0)
+                {
+                    PlayerController.instance.canRoll = true;
+                    rollCoolDown = rollCoolDownTime;
+                }
             };
 
             Spartan.Player.Move.performed += i => 

@@ -236,6 +236,8 @@ namespace Gamekit3D
             {
                 maxForwardSpeed = 8f;
             }
+
+
         }
 
         void HandleRolling()
@@ -245,6 +247,7 @@ namespace Gamekit3D
                 m_Animator.SetBool("Roll", true);
                 m_Animator.applyRootMotion = true;
                 m_Animator.CrossFade("Rolling", 0.2f);
+
             }
         }
 
