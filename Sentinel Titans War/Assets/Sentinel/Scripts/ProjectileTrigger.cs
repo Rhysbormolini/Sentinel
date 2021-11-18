@@ -64,7 +64,7 @@ namespace Gamekit3D
                 Instantiate(lightningStormProjectile, lightningStormSpawnTransform.position, transform.rotation);
                 lightningStormAbilityCoolDown = lightningStormAbilityCoolDownTime;
                 //StunEnemies();
-                
+
             }
 
             if (lightningStormAbilityCoolDown > 0)
