@@ -1065,13 +1065,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScanner:
     heightOffset: 1
-    detectionRadius: 15
+    detectionRadius: 20
     detectionAngle: 360
     maxHeightDifference: 1
     viewBlockerLayerMask:
       serializedVersion: 2
-      m_Bits: 2147483648
-  fleeingDistance: 0
+      m_Bits: 2147549184
+  fleeingDistance: 3
   rangeWeapon: {fileID: 7234313132248639569}
   attackAudio: {fileID: 1143458354639233683}
   frontStepAudio: {fileID: 1140285151486957635}
@@ -1096,8 +1096,8 @@ MonoBehaviour:
   applyAnimationRotation: 1
   m_Animator: {fileID: 1086867649744227557}
   state: 
-  runSpeed: 1
-  walkSpeed: 1
+  runSpeed: 0.5
+  walkSpeed: 0.5
 --- !u!195 &932687291630001833
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1132,8 +1132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0149b5ab8f608c943b260125ac76d875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 1
-  invulnerabiltyTime: 0
+  maxHitPoints: 3
+  invulnerabiltyTime: 1
   rollInvulnerabiltyTime: 0
   hitAngle: 360
   hitForwardRotation: 360
@@ -1183,7 +1183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterModel: {fileID: 1029226695672006509}
-  ragdollPrefab: {fileID: 1808019460845018, guid: 498ce9a6d8cee064eb3a0ae89cd17d58,
+  ragdollPrefab: {fileID: 4639814640682337747, guid: f77700f318aa3414e9fc2f8f7b1b692f,
     type: 3}
 --- !u!54 &1046238508865126929
 Rigidbody:

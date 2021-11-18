@@ -9794,8 +9794,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da912c8e3bb32f4eb5d9ce36d473b94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStorm: 0
   m_Speed: 40
-  m_Lifespan: 2
+  m_Lifespan: 1
 --- !u!114 &7264675952908036743
 MonoBehaviour:
   m_ObjectHideFlags: 0
