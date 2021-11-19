@@ -2,6 +2,7 @@ using UnityEngine;
 using Gamekit3D.Message;
 using System.Collections;
 using UnityEngine.XR.WSA;
+using System;
 
 namespace Gamekit3D
 {
@@ -21,6 +22,9 @@ namespace Gamekit3D
         public float maxTurnSpeed = 1200f;        // How fast Ellen turns when stationary.
         public float idleTimeout = 5f;            // How long before Ellen starts considering random idles.
         public bool canAttack;                    // Whether or not Ellen can swing her staff.
+        [SerializeField] public bool canRoll;
+        public Vector2 movement;
+        float horizontal, vertical;
 
         public CameraSettings cameraSettings;            // Reference used to determine the camera's direction.
         public MeleeWeapon meleeWeapon;                  // Reference used to (de)activate the staff when attacking. 
@@ -46,7 +50,7 @@ namespace Gamekit3D
         protected float m_VerticalSpeed;               // How fast Ellen is currently moving up or down.
         protected PlayerInput m_Input;                 // Reference used to determine how Ellen should move.
         protected CharacterController m_CharCtrl;      // Reference used to actually move Ellen.
-        protected Animator m_Animator;                 // Reference used to make decisions based on Ellen's current animation and to set parameters.
+        public Animator m_Animator;                 // Reference used to make decisions based on Ellen's current animation and to set parameters.
         protected Material m_CurrentWalkingSurface;    // Reference used to make decisions about audio.
         protected Quaternion m_TargetRotation;         // What rotation Ellen is aiming to have based on input.
         protected float m_AngleDiff;                   // Angle in degrees between Ellen's current rotation and her target rotation.
@@ -58,6 +62,7 @@ namespace Gamekit3D
         protected Checkpoint m_CurrentCheckpoint;      // Reference used to reset Ellen to the correct position on respawn.
         protected bool m_Respawning;                   // Whether Ellen is currently respawning.
         protected float m_IdleTimer;                   // Used to count up to Ellen considering a random idle.
+
 
         // These constants are used to ensure Ellen moves and behaves properly.
         // It is advised you don't change them without fully understanding what they do in code.
@@ -96,6 +101,8 @@ namespace Gamekit3D
         readonly int m_HashEllenCombo3 = Animator.StringToHash("EllenCombo3");
         readonly int m_HashEllenCombo4 = Animator.StringToHash("EllenCombo4");
         readonly int m_HashEllenDeath = Animator.StringToHash("EllenDeath");
+
+        LockOn locked;
 
         // Tags
         readonly int m_HashBlockInput = Animator.StringToHash("BlockInput");
@@ -145,8 +152,18 @@ namespace Gamekit3D
             m_Input = GetComponent<PlayerInput>();
             m_Animator = GetComponent<Animator>();
             m_CharCtrl = GetComponent<CharacterController>();
+            locked = GetComponent<LockOn>();
 
             meleeWeapon.SetOwner(gameObject);
+
+            foreach (Animator a in GetComponentsInChildren<Animator>())
+            {
+                if (a != m_Animator)
+                {
+                    m_Animator.avatar = a.avatar;
+                    a.enabled = false;
+                }
+            }
 
             s_Instance = this;
         }
@@ -180,6 +197,9 @@ namespace Gamekit3D
         // Called automatically by Unity once every Physics step.
         void FixedUpdate()
         {
+            vertical = movement.x;
+            horizontal = movement.y;
+
             CacheAnimatorState();
 
             UpdateInputBlocking();
@@ -196,7 +216,7 @@ namespace Gamekit3D
             CalculateVerticalMovement();
 
             SetTargetRotation();
-
+            
             if (IsOrientationUpdated() && IsMoveInput)
                 UpdateOrientation();
 
@@ -205,6 +225,40 @@ namespace Gamekit3D
             TimeoutToIdle();
 
             m_PreviouslyGrounded = m_IsGrounded;
+
+            HandleRolling();
+
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                maxForwardSpeed = 12f;
+            }
+            else
+            {
+                maxForwardSpeed = 8f;
+            }
+
+
+        }
+
+        void HandleRolling()
+        {            
+            if (canRoll && m_IsGrounded)
+            {
+                m_Animator.SetBool("Roll", true);
+                m_Animator.applyRootMotion = true;
+                m_Animator.CrossFade("Rolling", 0.2f);
+
+            }
+        }
+
+        public void Pee()
+        {
+            m_Animator.SetBool("Roll", false);
+        }
+
+        private void LateUpdate()
+        {
+            canRoll = false;
         }
 
         // Called at the start of FixedUpdate to record the current state of the base layer of the animator.
@@ -241,7 +295,7 @@ namespace Gamekit3D
         // Called each physics step with a parameter based on the return value of IsWeaponEquiped.
         void EquipMeleeWeapon(bool equip)
         {
-            meleeWeapon.gameObject.SetActive(equip);
+            //meleeWeapon.gameObject.SetActive(equip);
             m_InAttack = false;
             m_InCombo = equip;
 
@@ -678,5 +732,6 @@ namespace Gamekit3D
             m_Respawning = true;
             m_Damageable.isInvulnerable = true;
         }
+
     }
 }

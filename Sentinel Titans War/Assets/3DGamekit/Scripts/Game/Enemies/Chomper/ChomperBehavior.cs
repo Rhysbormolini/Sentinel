@@ -25,7 +25,7 @@ namespace Gamekit3D
         public TargetDistributor.TargetFollower followerData { get { return m_FollowerInstance; } }
 
         public Vector3 originalPosition { get; protected set; }
-        [System.NonSerialized]
+        
         public float attackDistance = 3;
 
         public MeleeWeapon meleeWeapon;

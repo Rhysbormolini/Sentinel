@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using Gamekit3D;
+using UnityEngine.Events;
 
 
 public class PlayerInput : MonoBehaviour
@@ -10,6 +11,7 @@ public class PlayerInput : MonoBehaviour
     {
         get { return s_Instance; }
     }
+
 
     protected static PlayerInput s_Instance;
 
@@ -20,14 +22,20 @@ public class PlayerInput : MonoBehaviour
     protected Vector2 m_Camera;
     protected bool m_Jump;
     protected bool m_Attack;
+    protected bool m_Aim;
     protected bool m_Pause;
     protected bool m_ExternalInputBlocked;
+    [SerializeField] float rollCoolDown;
+    [SerializeField] float rollCoolDownTime;
+
+    Actions Spartan;
+    Vector3 moveInput;
 
     public Vector2 MoveInput
     {
         get
         {
-            if(playerControllerInputBlocked || m_ExternalInputBlocked)
+            if(playerControllerInputBlocked || m_ExternalInputBlocked || PlayerController.instance.canRoll)
                 return Vector2.zero;
             return m_Movement;
         }
@@ -89,6 +97,11 @@ public class PlayerInput : MonoBehaviour
         }
 
         m_Pause = Input.GetButtonDown ("Pause");
+
+        if (rollCoolDown > 0)
+        {
+            rollCoolDown -= Time.deltaTime;
+        }
     }
 
     IEnumerator AttackWait()
@@ -113,5 +126,32 @@ public class PlayerInput : MonoBehaviour
     public void GainControl()
     {
         m_ExternalInputBlocked = false;
+    }
+
+    private void OnEnable()
+    {
+        if (Spartan == null)
+        {
+            Spartan = new Actions();
+            Spartan.Player.Roll.performed += i => 
+            {
+                if (rollCoolDown <= 0)
+                {
+                    PlayerController.instance.canRoll = true;
+                    rollCoolDown = rollCoolDownTime;
+                }
+            };
+
+            Spartan.Player.Move.performed += i => 
+            { 
+                moveInput = i.ReadValue<Vector2>(); 
+            };
+        }
+        Spartan.Enable();
+    }
+
+    private void OnDisable()
+    {
+        Spartan.Disable();
     }
 }

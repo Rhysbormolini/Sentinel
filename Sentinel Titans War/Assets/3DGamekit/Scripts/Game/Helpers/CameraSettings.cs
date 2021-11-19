@@ -85,5 +85,6 @@ namespace Gamekit3D
             keyboardAndMouseCamera.Priority = inputChoice == InputChoice.KeyboardAndMouse ? 1 : 0;
             controllerCamera.Priority = inputChoice == InputChoice.Controller ? 1 : 0;
         }
+
     } 
 }
