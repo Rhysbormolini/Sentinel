@@ -130,7 +130,7 @@ namespace Gamekit3D
         {
             damageAudioPlayer.PlayRandomClip();
             m_EnemyController.animator.SetTrigger(hashHitParam);
-            m_CoreMaterial.SetColor("_Color2", Color.red);
+            //m_CoreMaterial.SetColor("_Color2", Color.red);
         }
 
         public void Die()
@@ -154,7 +154,7 @@ namespace Gamekit3D
 
         public void ReturnVulnerable()
         {
-            m_CoreMaterial.SetColor("_Color2", m_OriginalCoreMaterial);
+            //m_CoreMaterial.SetColor("_Color2", m_OriginalCoreMaterial);
         }
 
         public void RememberTargetPosition()

@@ -35,6 +35,7 @@ namespace Gamekit3D
                 return;
 
             m_LoadedProjectile = m_ProjectilePool.GetNew();
+            m_LoadedProjectile.gameObject.SetActive(true);
             m_LoadedProjectile.transform.SetParent(transform, false);
             m_LoadedProjectile.transform.localPosition = muzzleOffset;
             m_LoadedProjectile.transform.localRotation = Quaternion.identity;
