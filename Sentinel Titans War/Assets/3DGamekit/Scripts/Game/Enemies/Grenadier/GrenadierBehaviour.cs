@@ -79,7 +79,7 @@ namespace Gamekit3D
             fistWeapon.SetOwner(gameObject);
             fistWeapon.EndAttack();
 
-            m_CoreMaterial = coreRenderer.materials[1];
+            //m_CoreMaterial = coreRenderer.materials[1];
             //m_OriginalCoreMaterial = m_CoreMaterial.GetColor("_Color2");
 
             m_EnemyController.animator.Play(hashIdleState, 0, Random.value);
