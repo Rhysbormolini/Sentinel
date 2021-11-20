@@ -237,6 +237,16 @@ namespace Gamekit3D
                 maxForwardSpeed = 8f;
             }
 
+            if (Input.GetKey(KeyCode.Mouse1))
+            {
+                m_Animator.Play("Spin Attack");
+            }
+
+            //if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.Mouse0))
+            //{
+            //    m_Animator.Play("Running Attack");
+            //}
+
 
         }
 
