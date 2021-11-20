@@ -144,7 +144,7 @@ public class PlayerInput : MonoBehaviour
 
             Spartan.Player.Move.performed += i => 
             { 
-                moveInput = i.ReadValue<Vector2>(); 
+                moveInput = i.ReadValue<Vector2>();
             };
         }
         Spartan.Enable();
