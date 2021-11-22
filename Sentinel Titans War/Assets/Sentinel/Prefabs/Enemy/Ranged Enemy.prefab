@@ -1071,7 +1071,7 @@ MonoBehaviour:
     viewBlockerLayerMask:
       serializedVersion: 2
       m_Bits: 2147549184
-  fleeingDistance: 3
+  fleeingDistance: 2
   rangeWeapon: {fileID: 7234313132248639569}
   attackAudio: {fileID: 1143458354639233683}
   frontStepAudio: {fileID: 1140285151486957635}
@@ -1132,8 +1132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0149b5ab8f608c943b260125ac76d875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 3
-  invulnerabiltyTime: 1
+  maxHitPoints: 2
+  invulnerabiltyTime: 0.5
   rollInvulnerabiltyTime: 0
   hitAngle: 360
   hitForwardRotation: 360
