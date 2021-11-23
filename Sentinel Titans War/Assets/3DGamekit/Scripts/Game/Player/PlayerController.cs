@@ -228,7 +228,7 @@ namespace Gamekit3D
 
             HandleRolling();
 
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetButton("Sprint"))
             {
                 maxForwardSpeed = 12f;
             }
@@ -237,7 +237,7 @@ namespace Gamekit3D
                 maxForwardSpeed = 8f;
             }
 
-            if (Input.GetKey(KeyCode.Mouse1))
+            if (Input.GetKey(KeyCode.Mouse1) || Input.GetButton("Heavy"))
             {
                 m_Animator.Play("Spin Attack");
             }

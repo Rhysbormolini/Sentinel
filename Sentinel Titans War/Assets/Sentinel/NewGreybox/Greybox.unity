@@ -1991,6 +1991,16 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.0000000041909516
       objectReference: {fileID: 0}
+    - target: {fileID: 8602529292715662642, guid: a466da7d9c192e14bbe330fc3300165d,
+        type: 3}
+      propertyPath: m_XAxis.m_InvertInput
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8602529292715662642, guid: a466da7d9c192e14bbe330fc3300165d,
+        type: 3}
+      propertyPath: m_YAxis.m_InvertInput
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8602982698482294414, guid: a466da7d9c192e14bbe330fc3300165d,
         type: 3}
       propertyPath: follow
@@ -2001,6 +2011,21 @@ PrefabInstance:
       propertyPath: lookAt
       value: 
       objectReference: {fileID: 326804597}
+    - target: {fileID: 8602982698482294414, guid: a466da7d9c192e14bbe330fc3300165d,
+        type: 3}
+      propertyPath: inputChoice
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8602982698482294414, guid: a466da7d9c192e14bbe330fc3300165d,
+        type: 3}
+      propertyPath: controllerInvertSettings.invertX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8602982698482294414, guid: a466da7d9c192e14bbe330fc3300165d,
+        type: 3}
+      propertyPath: keyboardAndMouseInvertSettings.invertX
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a466da7d9c192e14bbe330fc3300165d, type: 3}
 --- !u!4 &326804597 stripped
@@ -3052,7 +3077,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &531952403
 Transform:
   m_ObjectHideFlags: 0
