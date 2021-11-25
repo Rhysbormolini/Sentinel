@@ -15,18 +15,15 @@ MonoBehaviour:
   language: English
   phrases:
   - key: INFO1
-    value: Move Eklektos, move your legs!        (Press W, A, S, D)
+    value: Go forth Eklektos, move your legs!        (Press W, A, S, D)
   - key: INFO2
-    value: Take up your sword, strike down these foul beasts! (Press Mouse 0 / Left
-      Click & Mouse 1 / Right Click)
+    value: Take up your sword, strike down these foul beasts! (Left Click/ Right
+      Click)
   - key: INFO3
-    value: Take my power Eklektos and you should make short work of these minions.
-      (Press E)
+    value: Take my power Eklektos, make short work of these minions. (Press E)
   - key: INFO4
-    value: 'Oooh what a weird stepping stone... I want to tread on it and see what
-      it does. '
-  - key: INFO4b
-    value: 'This must open somehow. I''ll explore and see what I can find. '
+    value: Well done Eklektos, that was mighty... Shocking! Hahaha
   - key: INFO5
-    value: I wonder what those massive door crystals are for? I should look around
-      for some more switches.
+    value: 
+  - key: INFO6
+    value: 
