@@ -1145,7 +1145,7 @@ GameObject:
   - component: {fileID: 7005935768979504818}
   - component: {fileID: 2726699979431223227}
   m_Layer: 23
-  m_Name: Melee Enemy
+  m_Name: Melee Ork
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1233,7 +1233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHitPoints: 5
-  invulnerabiltyTime: 1
+  invulnerabiltyTime: 0.5
   rollInvulnerabiltyTime: 0
   hitAngle: 360
   hitForwardRotation: 360
@@ -1270,7 +1270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterModel: {fileID: 7170835913897609512}
-  ragdollPrefab: {fileID: 8802953022159997448, guid: 9fc5e0de73a4bcc49846897e2f56d106,
+  ragdollPrefab: {fileID: 8802953022159997448, guid: 3d8be7fb5de0607489e8183cf1d0812e,
     type: 3}
 --- !u!65 &7162091304426369790
 BoxCollider:
@@ -1659,7 +1659,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1218283935775276, guid: d13979ead615e4b449d6ff416518e728, type: 3}
       propertyPath: m_Name
-      value: Axe
+      value: Weapon
       objectReference: {fileID: 0}
     - target: {fileID: 1218283935775276, guid: d13979ead615e4b449d6ff416518e728, type: 3}
       propertyPath: m_Layer

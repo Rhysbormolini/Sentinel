@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -14,18 +15,15 @@ MonoBehaviour:
   language: English
   phrases:
   - key: INFO1
-    value: Where am I? Can I even move my legs? I'll try W, A, S, and D. Maybe they'll
-      start to feel normal again.
+    value: Go forth Eklektos, move your legs!        (Press W, A, S, D)
   - key: INFO2
-    value: Can I jump over this if I press SPACE?
+    value: Take up your sword, strike down these foul beasts! (Left Click/ Right
+      Click)
   - key: INFO3
-    value: This looks fun to smash stuff with! I'll try LEFT CLICK on my MOUSE and
-      see what happens...
+    value: Take my power Eklektos, make short work of these minions. (Press E)
   - key: INFO4
-    value: 'Oooh what a weird stepping stone... I want to tread on it and see what
-      it does. '
-  - key: INFO4b
-    value: 'This must open somehow. I''ll explore and see what I can find. '
+    value: Well done Eklektos, that was mighty... Shocking! Hahaha
   - key: INFO5
-    value: I wonder what those massive door crystals are for? I should look around
-      for some more switches.
+    value: 
+  - key: INFO6
+    value: 

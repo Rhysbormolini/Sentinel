@@ -96,7 +96,7 @@ AvatarMask:
   - m_Path: Armature/Root/Hips/Spine_01/Spine_02/Spine_03/Neck/Head/Eyes/Eyes_end
     m_Weight: 1
   - m_Path: Armature/Root/Hips/UpperLeg_L
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: Armature/Root/Hips/UpperLeg_L/LowerLeg_L
     m_Weight: 1
   - m_Path: Armature/Root/Hips/UpperLeg_L/LowerLeg_L/Ankle_L
@@ -106,7 +106,7 @@ AvatarMask:
   - m_Path: Armature/Root/Hips/UpperLeg_L/LowerLeg_L/Ankle_L/Ball_L/Ball_L_end
     m_Weight: 1
   - m_Path: Armature/Root/Hips/UpperLeg_R
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: Armature/Root/Hips/UpperLeg_R/LowerLeg_R
     m_Weight: 1
   - m_Path: Armature/Root/Hips/UpperLeg_R/LowerLeg_R/Ankle_R

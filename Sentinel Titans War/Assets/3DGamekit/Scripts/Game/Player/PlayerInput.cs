@@ -95,6 +95,13 @@ public class PlayerInput : MonoBehaviour
 
             m_AttackWaitCoroutine = StartCoroutine(AttackWait());
         }
+        else if (Input.GetButton("Light"))
+        {
+            if (m_AttackWaitCoroutine != null)
+                StopCoroutine(m_AttackWaitCoroutine);
+
+            m_AttackWaitCoroutine = StartCoroutine(AttackWait());
+        }
 
         m_Pause = Input.GetButtonDown ("Pause");
 
@@ -144,7 +151,7 @@ public class PlayerInput : MonoBehaviour
 
             Spartan.Player.Move.performed += i => 
             { 
-                moveInput = i.ReadValue<Vector2>(); 
+                moveInput = i.ReadValue<Vector2>();
             };
         }
         Spartan.Enable();

@@ -55,6 +55,8 @@ namespace Gamekit3D
                 if (playerController.cameraSettings == null)
                     playerController.cameraSettings = this;
             }
+
+            //if (Input.anyKey) { return true} else { return false}
         }
 
         void Awake()

@@ -6762,7 +6762,7 @@ GameObject:
   - component: {fileID: 5644091565579357501}
   - component: {fileID: 7490907642896604126}
   m_Layer: 20
-  m_Name: Melee Ragdoll
+  m_Name: Troll Ragdoll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7091,6 +7091,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1070804649064472, guid: 0d42bc61d684259409d481c6f5dd5d5c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1073814223139560, guid: 0d42bc61d684259409d481c6f5dd5d5c, type: 3}
       propertyPath: m_Layer
       value: 20
@@ -7302,6 +7306,10 @@ PrefabInstance:
     - target: {fileID: 1921187060759716, guid: 0d42bc61d684259409d481c6f5dd5d5c, type: 3}
       propertyPath: m_Layer
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921187060759716, guid: 0d42bc61d684259409d481c6f5dd5d5c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1959783595866112, guid: 0d42bc61d684259409d481c6f5dd5d5c, type: 3}
       propertyPath: m_Layer

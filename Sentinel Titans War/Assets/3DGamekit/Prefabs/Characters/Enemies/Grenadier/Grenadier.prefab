@@ -39783,7 +39783,7 @@ Transform:
   m_GameObject: {fileID: 1399278638159864}
   m_LocalRotation: {x: -0.7071067, y: -0.000000007450581, z: 0.000000048428774, w: 0.7071068}
   m_LocalPosition: {x: -0.53, y: 0, z: -0.003}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5101, y: 2.5101, z: 2.5101}
   m_Children:
   - {fileID: 4350406480055956}
   m_Father: {fileID: 4271466715528528}
@@ -44586,7 +44586,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 812711788cf266f42b51412dc8f5e312, type: 2}
-  - {fileID: 2100000, guid: fff934583a5bbd74d88f71ba52a91af8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -89962,8 +89961,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0149b5ab8f608c943b260125ac76d875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 3
+  maxHitPoints: 5
   invulnerabiltyTime: 3
+  rollInvulnerabiltyTime: 0
   hitAngle: 170
   hitForwardRotation: 180
   OnDeath:
@@ -90027,6 +90027,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   OnResetDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRoll:
     m_PersistentCalls:
       m_Calls: []
   onDamageMessageReceivers: []
@@ -95067,6 +95070,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interpolateTurning: 0
   applyAnimationRotation: 0
+  m_Animator: {fileID: 0}
+  state: 
+  runSpeed: 1
+  walkSpeed: 1
 --- !u!114 &114516983396116286
 MonoBehaviour:
   m_ObjectHideFlags: 0

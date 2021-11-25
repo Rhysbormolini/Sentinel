@@ -1008,7 +1008,7 @@ GameObject:
   - component: {fileID: 1140494451369379153}
   - component: {fileID: 1046238508865126929}
   m_Layer: 23
-  m_Name: Ranged Enemy
+  m_Name: Ranged Forest Guardian
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1183,7 +1183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterModel: {fileID: 1029226695672006509}
-  ragdollPrefab: {fileID: 4639814640682337747, guid: f77700f318aa3414e9fc2f8f7b1b692f,
+  ragdollPrefab: {fileID: 4639814640682337747, guid: b7627d58c4ab33b4e869e7f21ec394d1,
     type: 3}
 --- !u!54 &1046238508865126929
 Rigidbody:
@@ -2510,7 +2510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7236753881494104366
 Transform:
   m_ObjectHideFlags: 0
@@ -4268,7 +4268,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7237617375178328400
 Transform:
   m_ObjectHideFlags: 0

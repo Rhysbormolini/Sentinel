@@ -40,6 +40,13 @@ namespace Gamekit3D
                 Instantiate(tornadoProjectile, tornadoSpawnTransform.position, Camera.main.transform.rotation);
                 tornadoAbilityCoolDown = tornadoAbilityCoolDownTime;
             }
+            else if (Input.GetButton("Tornado") && tornadoAbilityCoolDown <= 0 && tornadoUnlocked == true)
+            {
+                m_Animator.Play("TornadoAnim");
+                Instantiate(tornadoProjectile, tornadoSpawnTransform.position, Camera.main.transform.rotation);
+                tornadoAbilityCoolDown = tornadoAbilityCoolDownTime;
+            }
+
 
             if (tornadoAbilityCoolDown > 0)
             {
@@ -52,6 +59,13 @@ namespace Gamekit3D
                 Instantiate(lightningBallProjectile, lightningBallSpawnTransform.position, Camera.main.transform.rotation);
                 lightningBallAbilityCoolDown = lightningBallAbilityCoolDownTime;
             }
+            else if (Input.GetButton("Ball") && lightningBallAbilityCoolDown <= 0 && ballUnlocked == true)
+            {
+                m_Animator.Play("ZapZapAnim");
+                Instantiate(lightningBallProjectile, lightningBallSpawnTransform.position, Camera.main.transform.rotation);
+                lightningBallAbilityCoolDown = lightningBallAbilityCoolDownTime;
+            }
+
 
             if (lightningBallAbilityCoolDown > 0)
             {
@@ -63,8 +77,12 @@ namespace Gamekit3D
                 m_Animator.Play("StormAnim");
                 Instantiate(lightningStormProjectile, lightningStormSpawnTransform.position, transform.rotation);
                 lightningStormAbilityCoolDown = lightningStormAbilityCoolDownTime;
-                //StunEnemies();
-
+            }
+            else if (Input.GetButton("Storm") && lightningStormAbilityCoolDown <= 0 && stormUnlocked == true)
+            {
+                m_Animator.Play("StormAnim");
+                Instantiate(lightningStormProjectile, lightningStormSpawnTransform.position, transform.rotation);
+                lightningStormAbilityCoolDown = lightningStormAbilityCoolDownTime;
             }
 
             if (lightningStormAbilityCoolDown > 0)
@@ -72,17 +90,5 @@ namespace Gamekit3D
                 lightningStormAbilityCoolDown -= Time.deltaTime;
             }
         }
-
-  //      private void StunEnemies()
-		//{
-  //          float radius = lightningStormProjectile.GetComponent<SphereCollider>().radius;
-
-  //          Collider[] targets = Physics.OverlapSphere(tornadoSpawnTransform.position, radius * 10, layerMask);
-
-  //          foreach (Collider collider in targets)
-		//	{
-  //              collider.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-		//	}
-		//}
 	}
 }
