@@ -263,7 +263,7 @@ namespace Gamekit3D
             pushForce.y = 0;
 
             transform.forward = -pushForce.normalized;
-            controller.AddForce(pushForce.normalized * 1.5f, false);
+            controller.AddForce(pushForce.normalized * 1.5f, false);//TODO: make public float
 
             controller.animator.SetFloat(hashVerticalDot, verticalDot);
             controller.animator.SetFloat(hashHorizontalDot, horizontalDot);
