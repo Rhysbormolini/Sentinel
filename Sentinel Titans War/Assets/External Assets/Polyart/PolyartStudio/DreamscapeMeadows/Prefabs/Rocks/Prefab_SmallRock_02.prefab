@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &4173481545539730750
 Transform:
@@ -58,10 +58,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4173481545539730750}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 4fc011e10ef0efb46bce7cbd10e5d61f,
+    - target: {fileID: -4216859302048453862, guid: 4fc011e10ef0efb46bce7cbd10e5d61f,
         type: 3}
-      propertyPath: m_Name
-      value: SM_SmallRock_02
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4fc011e10ef0efb46bce7cbd10e5d61f,
         type: 3}
@@ -80,6 +80,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4fc011e10ef0efb46bce7cbd10e5d61f,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 4fc011e10ef0efb46bce7cbd10e5d61f,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.000000021855694
       objectReference: {fileID: 0}
@@ -95,16 +100,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4fc011e10ef0efb46bce7cbd10e5d61f,
         type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 4fc011e10ef0efb46bce7cbd10e5d61f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 4fc011e10ef0efb46bce7cbd10e5d61f,
-        type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
@@ -117,6 +112,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 4fc011e10ef0efb46bce7cbd10e5d61f,
+        type: 3}
+      propertyPath: m_Name
+      value: SM_SmallRock_02
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 4fc011e10ef0efb46bce7cbd10e5d61f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fc011e10ef0efb46bce7cbd10e5d61f, type: 3}
