@@ -268,6 +268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6778872466010954782}
   - component: {fileID: 6224249571225651930}
+  - component: {fileID: -5564235194631698681}
   m_Layer: 0
   m_Name: Prefab_StoneSmall_04
   m_TagString: Untagged
@@ -319,3 +320,17 @@ LODGroup:
     renderers:
     - renderer: {fileID: 6180895316866314034}
   m_Enabled: 1
+--- !u!64 &-5564235194631698681
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7514323389622038029}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}

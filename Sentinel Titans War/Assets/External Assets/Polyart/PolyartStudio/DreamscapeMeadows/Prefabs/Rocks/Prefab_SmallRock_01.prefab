@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7901056077792958688}
   - component: {fileID: 7901056077792958695}
+  - component: {fileID: -2099740656166152442}
   m_Layer: 0
   m_Name: Prefab_SmallRock_01
   m_TagString: Untagged
@@ -51,6 +52,20 @@ LODGroup:
     renderers:
     - renderer: {fileID: 484994298750531975}
   m_Enabled: 1
+--- !u!64 &-2099740656166152442
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7901056077792958689}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1001 &7901056078886999122
 PrefabInstance:
   m_ObjectHideFlags: 0
