@@ -15,7 +15,9 @@ MonoBehaviour:
   language: English
   phrases:
   - key: INFO1
-    value: Go forth Eklektos, move your legs!        (Press W, A, S, D)
+    value: Go forth Eklektos, move your legs!                                  (Press
+      W, A, S, D to Move)  (Shift to Run)                                (C to Roll)
+      (SpaceBar to Jump)
   - key: INFO2
     value: Take up your sword, strike down these foul beasts! (Left Click/ Right
       Click)

@@ -1233,7 +1233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHitPoints: 5
-  invulnerabiltyTime: 0.5
+  invulnerabiltyTime: 0.1
   rollInvulnerabiltyTime: 0
   hitAngle: 360
   hitForwardRotation: 360
