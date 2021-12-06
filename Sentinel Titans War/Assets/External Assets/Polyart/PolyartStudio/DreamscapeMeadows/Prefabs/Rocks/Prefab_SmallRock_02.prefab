@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 4173481545539730750}
   - component: {fileID: 4173481545539730737}
   - component: {fileID: -215119988391255305}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Prefab_SmallRock_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4173481545539730750
 Transform:
@@ -135,8 +135,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 4fc011e10ef0efb46bce7cbd10e5d61f,
         type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 4fc011e10ef0efb46bce7cbd10e5d61f,
+        type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fc011e10ef0efb46bce7cbd10e5d61f, type: 3}

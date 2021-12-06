@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 8479205936031310250}
   - component: {fileID: 9070159806031837038}
   - component: {fileID: 2396008194500999433}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: Prefab_StoneSmall_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8479205936031310250
 Transform:
@@ -87,12 +87,12 @@ GameObject:
   - component: {fileID: 2433452075705943165}
   - component: {fileID: 5684338894911237445}
   - component: {fileID: 3461882792275142210}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: SM_Stone_02_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2433452075705943165
 Transform:
@@ -169,12 +169,12 @@ GameObject:
   - component: {fileID: 2572165335772127770}
   - component: {fileID: 5317393090188468950}
   - component: {fileID: 422573917832137317}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: SM_Stone_02_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7938502745784861927
 Transform:
@@ -264,12 +264,12 @@ GameObject:
   - component: {fileID: 7832198183353439844}
   - component: {fileID: 7269382791316180242}
   - component: {fileID: 7306737651253758590}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: SM_Stone_02_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7832198183353439844
 Transform:

@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 6787951649392427812}
   - component: {fileID: 6787951649391460836}
   - component: {fileID: 1992541938549936730}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: Prefab_RocksRound_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6787951649393754884
 Transform:

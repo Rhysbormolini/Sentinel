@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 2363656785700427972}
   - component: {fileID: 8026699459311784747}
   - component: {fileID: -4281841566538135131}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: Prefab_StoneSmall_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2363656785700427972
 Transform:
@@ -92,8 +92,12 @@ PrefabInstance:
       value: SM_StoneSmall_03
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 2847afbbf21ac6049bf7057de7f67c78, type: 3}
+      propertyPath: m_Layer
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2847afbbf21ac6049bf7057de7f67c78, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2847afbbf21ac6049bf7057de7f67c78, type: 3}
       propertyPath: m_RootOrder
