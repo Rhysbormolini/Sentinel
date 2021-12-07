@@ -493,13 +493,12 @@ MonoBehaviour:
   defaultBank:
     name: 
     clips:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 3cd53d0b609b84c3f81091eed2958811, type: 3}
     - {fileID: 8300000, guid: 803a9890fea85427abf9ad72ea208ffb, type: 3}
     - {fileID: 8300000, guid: 8cfb4b7233855451baaf3ed1dc487d21, type: 3}
     - {fileID: 8300000, guid: eecb7d3158a0c42c7ba366aaf60a3a0c, type: 3}
     - {fileID: 8300000, guid: c7b0262d0fa4e43fd84a71b76cb238cd, type: 3}
     - {fileID: 8300000, guid: 077732bb49dcb4b1186157036c85c9b5, type: 3}
-    - {fileID: 8300000, guid: 3cd53d0b609b84c3f81091eed2958811, type: 3}
   overrides: []
   playing: 0
   canPlay: 0
@@ -1000,12 +999,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1029226695672006509}
   - component: {fileID: 1086867649744227557}
-  - component: {fileID: 1139905960815922015}
   - component: {fileID: 1139613886716943857}
-  - component: {fileID: 932687291630001833}
+  - component: {fileID: 1139905960815922015}
   - component: {fileID: 1139778409498555809}
-  - component: {fileID: 1058109031154478963}
   - component: {fileID: 1140494451369379153}
+  - component: {fileID: 932687291630001833}
+  - component: {fileID: 1058109031154478963}
   - component: {fileID: 1046238508865126929}
   m_Layer: 23
   m_Name: Ranged Spirit Demon
@@ -1028,7 +1027,6 @@ Transform:
   - {fileID: 7236968280814411698}
   - {fileID: 1029318477438185639}
   - {fileID: 1033229496391754969}
-  - {fileID: 1029547892407270977}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 4.945, z: 0}
@@ -1051,35 +1049,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1139905960815922015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1027801523902941803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c7eb4a99e38cb944a6f9c02187e7938, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerScanner:
-    heightOffset: 1
-    detectionRadius: 20
-    detectionAngle: 360
-    maxHeightDifference: 5
-    viewBlockerLayerMask:
-      serializedVersion: 2
-      m_Bits: 2147549184
-  fleeingDistance: 3
-  rangeWeapon: {fileID: 7234313132248639569}
-  attackAudio: {fileID: 1143458354639233683}
-  frontStepAudio: {fileID: 1140285151486957635}
-  backStepAudio: {fileID: 1140436350514976353}
-  hitAudio: {fileID: 1140391601646553345}
-  gruntAudio: {fileID: 1139655584359856891}
-  deathAudio: {fileID: 1139529670693217459}
-  spottedAudio: {fileID: 1139510878024172143}
 --- !u!114 &1139613886716943857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1098,28 +1067,35 @@ MonoBehaviour:
   state: 
   runSpeed: 0.5
   walkSpeed: 0.5
---- !u!195 &932687291630001833
-NavMeshAgent:
+--- !u!114 &1139905960815922015
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1027801523902941803}
   m_Enabled: 1
-  m_AgentTypeID: -1372625422
-  m_Radius: 0.3
-  m_Speed: 5
-  m_Acceleration: 999
-  avoidancePriority: 50
-  m_AngularSpeed: 999
-  m_StoppingDistance: 0.3
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c7eb4a99e38cb944a6f9c02187e7938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerScanner:
+    heightOffset: 1
+    detectionRadius: 20
+    detectionAngle: 270
+    maxHeightDifference: 10
+    viewBlockerLayerMask:
+      serializedVersion: 2
+      m_Bits: 2147549184
+  fleeingDistance: 2
+  rangeWeapon: {fileID: 7234313132248639569}
+  attackAudio: {fileID: 1143458354639233683}
+  frontStepAudio: {fileID: 1140285151486957635}
+  backStepAudio: {fileID: 1140436350514976353}
+  hitAudio: {fileID: 1140391601646553345}
+  gruntAudio: {fileID: 1139655584359856891}
+  deathAudio: {fileID: 1139529670693217459}
+  spottedAudio: {fileID: 1139510878024172143}
 --- !u!114 &1139778409498555809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1132,8 +1108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0149b5ab8f608c943b260125ac76d875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 3
-  invulnerabiltyTime: 1
+  maxHitPoints: 2
+  invulnerabiltyTime: 0.5
   rollInvulnerabiltyTime: 0
   hitAngle: 360
   hitForwardRotation: 360
@@ -1157,19 +1133,6 @@ MonoBehaviour:
       m_Calls: []
   onDamageMessageReceivers:
   - {fileID: 1139905960815922015}
---- !u!65 &1058109031154478963
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1027801523902941803}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.55553406, y: 2.2788255, z: 0.40574592}
-  m_Center: {x: -0.008224727, y: 1.159629, z: 0.0077463384}
 --- !u!114 &1140494451369379153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1185,6 +1148,41 @@ MonoBehaviour:
   characterModel: {fileID: 1029226695672006509}
   ragdollPrefab: {fileID: 4639814640682337747, guid: 252d61cfaa492ff448d2ce7e6b7c5b0b,
     type: 3}
+--- !u!195 &932687291630001833
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027801523902941803}
+  m_Enabled: 1
+  m_AgentTypeID: -1372625422
+  m_Radius: 0.3
+  m_Speed: 5
+  m_Acceleration: 999
+  avoidancePriority: 50
+  m_AngularSpeed: 999
+  m_StoppingDistance: 0.3
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!65 &1058109031154478963
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027801523902941803}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.55553406, y: 2.2788255, z: 0.40574592}
+  m_Center: {x: -0.008224727, y: 1.159629, z: 0.0077463384}
 --- !u!54 &1046238508865126929
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1400,71 +1398,6 @@ MonoBehaviour:
   overrides: []
   playing: 0
   canPlay: 0
---- !u!1 &1028494724262632125
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1029547892407270977}
-  - component: {fileID: 1139943200477451041}
-  - component: {fileID: 1058345674778421473}
-  m_Layer: 28
-  m_Name: BodyDamager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1029547892407270977
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1028494724262632125}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1029226695672006509}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1139943200477451041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1028494724262632125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05cf15f0f3c811d47b802c309648aed4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  helpString: "\r\nRemember to have a collider set to trigger on this object or one
-    of its children!\r\nAlso Remember to place that object in a layer that collide
-    with what you want to damage \r\n(e.g. the Enemy layer does not collide with
-    the Player layer, so add it to a child in a different layer)\r\n"
-  amount: 1
-  damagedLayers:
-    serializedVersion: 2
-    m_Bits: 512
---- !u!65 &1058345674778421473
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1028494724262632125}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.67719364, y: 0.7197622, z: 0.66300535}
-  m_Center: {x: -0.0053212643, y: 0.41326183, z: 0.07626712}
 --- !u!1 &7233488734855824338
 GameObject:
   m_ObjectHideFlags: 0
