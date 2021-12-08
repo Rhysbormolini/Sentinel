@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Gamekit3D;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -55,7 +56,7 @@ namespace Gamekit3D
         {
             m_InPause = true;
             SwitchPauseState();
-            SceneController.RestartZone();
+            SceneManager.LoadScene(1);
         }
 
         void Update()
