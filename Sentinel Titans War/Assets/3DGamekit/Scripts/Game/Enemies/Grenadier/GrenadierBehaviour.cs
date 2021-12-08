@@ -61,7 +61,7 @@ namespace Gamekit3D
         //used to store the position of the target when the Grenadier decide to shoot, so if the player
         //move between the start of the animation and the actual grenade launch, it shoot were it was not where it is now
         protected Vector3 m_GrenadeTarget;
-        protected Material m_CoreMaterial;
+        //protected Material m_CoreMaterial;
 
         protected Damageable m_Damageable;
         protected Color m_OriginalCoreMaterial;
@@ -79,7 +79,7 @@ namespace Gamekit3D
             fistWeapon.SetOwner(gameObject);
             fistWeapon.EndAttack();
 
-            m_CoreMaterial = coreRenderer.materials[1];
+            //m_CoreMaterial = coreRenderer.materials[1];
             //m_OriginalCoreMaterial = m_CoreMaterial.GetColor("_Color2");
 
             m_EnemyController.animator.Play(hashIdleState, 0, Random.value);
@@ -130,7 +130,7 @@ namespace Gamekit3D
         {
             damageAudioPlayer.PlayRandomClip();
             m_EnemyController.animator.SetTrigger(hashHitParam);
-            m_CoreMaterial.SetColor("_Color2", Color.red);
+            //m_CoreMaterial.SetColor("_Color2", Color.red);
         }
 
         public void Die()
@@ -154,7 +154,7 @@ namespace Gamekit3D
 
         public void ReturnVulnerable()
         {
-            m_CoreMaterial.SetColor("_Color2", m_OriginalCoreMaterial);
+           // m_CoreMaterial.SetColor("_Color2", m_OriginalCoreMaterial);
         }
 
         public void RememberTargetPosition()
