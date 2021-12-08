@@ -1,0 +1,1 @@
+In this scene, you can test out the CinemaIK manipulation through the scripts. The main difference is that you need to check "Game mode" toggle in the CinemaIK component. Any other options are the same as before.
