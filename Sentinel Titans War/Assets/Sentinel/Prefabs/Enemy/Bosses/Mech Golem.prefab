@@ -25489,7 +25489,7 @@ MonoBehaviour:
     heightOffset: 2
     detectionRadius: 40
     detectionAngle: 360
-    maxHeightDifference: 5
+    maxHeightDifference: 10
     viewBlockerLayerMask:
       serializedVersion: 2
       m_Bits: 65536
