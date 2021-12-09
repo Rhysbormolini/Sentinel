@@ -28,6 +28,9 @@ MonoBehaviour:
   - key: INFO5
     value: '**Press R to Summon a STORM upon your enemies!**'
   - key: INFO6
-    value: '**Run into the check to restore all your Health Points**'
+    value: '**Run into the chest to restore all your Health Points**'
   - key: INFO7
     value: '**Collect all 3 Crystals to unlock the final door**'
+  - key: INFO8
+    value: '**Legend says the Hydra might one day break free of its bonds, perhaps
+      in another life**'
