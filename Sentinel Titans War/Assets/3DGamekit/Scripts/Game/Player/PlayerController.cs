@@ -489,7 +489,7 @@ namespace Gamekit3D
             {
                 footstepPlayer.playing = true;
                 footstepPlayer.canPlay = false;
-                footstepPlayer.PlayRandomClip()/*(m_CurrentWalkingSurface, m_ForwardSpeed < 4 ? 0 : 1)*/;
+                footstepPlayer.PlayRandomClip(m_CurrentWalkingSurface, m_ForwardSpeed < 4 ? 0 : 1);
             }
             else if (footstepPlayer.playing)
             {
@@ -502,7 +502,7 @@ namespace Gamekit3D
 
             if (m_IsGrounded && !m_PreviouslyGrounded)
             {
-                landingPlayer.PlayRandomClip()/*(m_CurrentWalkingSurface, bankId: m_ForwardSpeed < 4 ? 0 : 1)*/;
+                landingPlayer.PlayRandomClip(m_CurrentWalkingSurface, bankId: m_ForwardSpeed < 4 ? 0 : 1);
                 emoteLandingPlayer.PlayRandomClip();
             }
 
