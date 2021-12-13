@@ -1107,7 +1107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0149b5ab8f608c943b260125ac76d875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 2
+  maxHitPoints: 1
   invulnerabiltyTime: 0.5
   rollInvulnerabiltyTime: 0
   hitAngle: 360
@@ -1197,7 +1197,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 0
 --- !u!1 &1028494026808868921
 GameObject:
   m_ObjectHideFlags: 0

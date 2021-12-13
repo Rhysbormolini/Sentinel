@@ -485,11 +485,11 @@ namespace Gamekit3D
         {
             float footfallCurve = m_Animator.GetFloat(m_HashFootFall);
 
-            if (footfallCurve > 0.01f && !footstepPlayer.playing && footstepPlayer.canPlay)
+            if (m_HashFootFall > 0.01f && !footstepPlayer.playing && footstepPlayer.canPlay)
             {
                 footstepPlayer.playing = true;
                 footstepPlayer.canPlay = false;
-                footstepPlayer.PlayRandomClip(/*m_CurrentWalkingSurface, m_ForwardSpeed < 4 ? 0 : 1*/);
+                //footstepPlayer.PlayRandomClip(/*m_CurrentWalkingSurface, m_ForwardSpeed < 4 ? 0 : 1*/);
             }
             else if (footstepPlayer.playing)
             {

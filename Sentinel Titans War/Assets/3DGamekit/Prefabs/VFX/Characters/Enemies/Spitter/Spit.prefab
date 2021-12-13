@@ -5239,7 +5239,7 @@ MonoBehaviour:
   explosionTimer: -1
   explosionVFX: {fileID: 198555850483263164, guid: 2a50a8340ead34c4a889cf99e9e35db4,
     type: 3}
-  vfxOnGround: 0
+  vfxOnGround: 1
   explosionPlayer: {fileID: 114035295747172896}
   bouncePlayer: {fileID: 0}
 --- !u!54 &54901130763289054
