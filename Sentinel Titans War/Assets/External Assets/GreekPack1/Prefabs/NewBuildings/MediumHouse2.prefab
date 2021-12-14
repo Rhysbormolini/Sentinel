@@ -203,7 +203,6 @@ GameObject:
   - component: {fileID: 434676361151197137}
   - component: {fileID: 434676361151197148}
   - component: {fileID: 434676361151197139}
-  - component: {fileID: 7519437723496544214}
   m_Layer: 16
   m_Name: greek_roof_tile (2)
   m_TagString: Untagged
@@ -274,20 +273,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7519437723496544214
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 434676361151197136}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: a071121fa70f84828a84918652bb1671, type: 3}
 --- !u!1 &434676361284468315
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,6 +531,7 @@ Transform:
   - {fileID: 434676361284468292}
   - {fileID: 434676361088806241}
   - {fileID: 434676361149403863}
+  - {fileID: 7627650230392939225}
   - {fileID: 6688956160810393678}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -3732,7 +3718,6 @@ GameObject:
   - component: {fileID: 5192795626682804139}
   - component: {fileID: 5221752982291892185}
   - component: {fileID: 5211711702288949345}
-  - component: {fileID: 6085164356037902825}
   m_Layer: 16
   m_Name: greek_wall_2_window (1)
   m_TagString: Untagged
@@ -3803,19 +3788,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6085164356037902825
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5189935341221199625}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 0.45}
-  m_Center: {x: 0, y: 1.5, z: 0.000000029802322}
 --- !u!1 &5189935341367890675
 GameObject:
   m_ObjectHideFlags: 0
@@ -3827,7 +3799,6 @@ GameObject:
   - component: {fileID: 5192795626528033361}
   - component: {fileID: 5221752982179080739}
   - component: {fileID: 5211711702167145883}
-  - component: {fileID: 6085164356151323667}
   m_Layer: 16
   m_Name: greek_wall_2_window (5)
   m_TagString: Untagged
@@ -3898,19 +3869,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6085164356151323667
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5189935341367890675}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 0.45}
-  m_Center: {x: 0, y: 1.5, z: 0.000000029802322}
 --- !u!1 &5189935341700439195
 GameObject:
   m_ObjectHideFlags: 0
@@ -3922,7 +3880,6 @@ GameObject:
   - component: {fileID: 5192795627130553401}
   - component: {fileID: 5221752982783697995}
   - component: {fileID: 5211711701696447475}
-  - component: {fileID: 6085164356624114299}
   m_Layer: 16
   m_Name: greek_wall_2_window (4)
   m_TagString: Untagged
@@ -3993,19 +3950,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6085164356624114299
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5189935341700439195}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 0.45}
-  m_Center: {x: 0, y: 1.5, z: 0.000000029802322}
 --- !u!1 &5189935342408013750
 GameObject:
   m_ObjectHideFlags: 0
@@ -4017,7 +3961,6 @@ GameObject:
   - component: {fileID: 5192795627500916500}
   - component: {fileID: 5221752981004611430}
   - component: {fileID: 5211711703140026590}
-  - component: {fileID: 6085164355178441046}
   m_Layer: 16
   m_Name: greek_wall_2_window (2)
   m_TagString: Untagged
@@ -4088,19 +4031,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6085164355178441046
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5189935342408013750}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 0.45}
-  m_Center: {x: 0, y: 1.5, z: 0.000000029802322}
 --- !u!1 &5189935343040643891
 GameObject:
   m_ObjectHideFlags: 0
@@ -4112,7 +4042,6 @@ GameObject:
   - component: {fileID: 5192795627933899665}
   - component: {fileID: 5221752981443754979}
   - component: {fileID: 5211711703036664923}
-  - component: {fileID: 6085164355812392403}
   m_Layer: 16
   m_Name: greek_wall_2_window
   m_TagString: Untagged
@@ -4183,19 +4112,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6085164355812392403
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5189935343040643891}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 0.45}
-  m_Center: {x: 0, y: 1.5, z: 0.000000029802322}
 --- !u!1 &5189937380457720246
 GameObject:
   m_ObjectHideFlags: 0
@@ -4207,7 +4123,6 @@ GameObject:
   - component: {fileID: 5192851993037799626}
   - component: {fileID: 5221519054130764136}
   - component: {fileID: 5212062350340700648}
-  - component: {fileID: 422787079196805529}
   m_Layer: 16
   m_Name: greek_roof_tile (1)
   m_TagString: Untagged
@@ -4278,20 +4193,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &422787079196805529
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5189937380457720246}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: a071121fa70f84828a84918652bb1671, type: 3}
 --- !u!1 &5189937381197760609
 GameObject:
   m_ObjectHideFlags: 0
@@ -4303,7 +4204,6 @@ GameObject:
   - component: {fileID: 5192851992704639261}
   - component: {fileID: 5221519053520222399}
   - component: {fileID: 5212062350812305471}
-  - component: {fileID: 3928047152774981013}
   m_Layer: 16
   m_Name: greek_roof_tile
   m_TagString: Untagged
@@ -4374,20 +4274,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3928047152774981013
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5189937381197760609}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: a071121fa70f84828a84918652bb1671, type: 3}
 --- !u!1 &5190058584119842898
 GameObject:
   m_ObjectHideFlags: 0
@@ -4770,7 +4656,6 @@ GameObject:
   - component: {fileID: 5192998932626470395}
   - component: {fileID: 5222182897981681063}
   - component: {fileID: 5212062990311050813}
-  - component: {fileID: 5252266797089152449}
   m_Layer: 16
   m_Name: greek_wall_2 (7)
   m_TagString: Untagged
@@ -4841,20 +4726,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5252266797089152449
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5190114941695943799}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 3d2e813d6bf7b4a09875d6f336d328e7, type: 3}
 --- !u!1 &5190114941903406996
 GameObject:
   m_ObjectHideFlags: 0
@@ -5109,7 +4980,6 @@ GameObject:
   - component: {fileID: 5192998931863894131}
   - component: {fileID: 5222182897754398767}
   - component: {fileID: 5212062991090402229}
-  - component: {fileID: 5252266797935611977}
   m_Layer: 16
   m_Name: greek_wall_2 (6)
   m_TagString: Untagged
@@ -5180,20 +5050,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5252266797935611977
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5190114942542408191}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 3d2e813d6bf7b4a09875d6f336d328e7, type: 3}
 --- !u!1 &5190114942758450032
 GameObject:
   m_ObjectHideFlags: 0
@@ -5644,7 +5500,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5188231666531724535}
-  m_RootOrder: 54
+  m_RootOrder: 55
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &428151885581542794
 BoxCollider:
@@ -5672,3 +5528,47 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9.389633, y: 6.3660226, z: 3.420258}
   m_Center: {x: 3.109786, y: 0.15211892, z: 4.79566}
+--- !u!1 &7584187147207556991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7627650230392939225}
+  - component: {fileID: 2747152581335847992}
+  m_Layer: 16
+  m_Name: Roof Colliders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7627650230392939225
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7584187147207556991}
+  m_LocalRotation: {x: -0.28276, y: 0, z: 0, w: 0.9591907}
+  m_LocalPosition: {x: 3.05, y: 0.96, z: 1.66}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5188231666531724535}
+  m_RootOrder: 54
+  m_LocalEulerAnglesHint: {x: -32.85, y: 0, z: 0}
+--- !u!65 &2747152581335847992
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7584187147207556991}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.45, y: 0.3, z: 4}
+  m_Center: {x: 0, y: 0, z: 0}
