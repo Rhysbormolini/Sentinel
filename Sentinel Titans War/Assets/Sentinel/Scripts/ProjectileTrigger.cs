@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.UI;
 
 namespace Gamekit3D
 {
@@ -18,39 +19,72 @@ namespace Gamekit3D
         public Transform tornadoSpawnTransform; // this is a reference to the transform where the prefab will spawn
         [SerializeField] float tornadoAbilityCoolDownTime;
         [SerializeField] float tornadoAbilityCoolDown;
+        bool tornadoCooldown = false;
+        public Image tornadoImage;
 
         [Header("Chain Lightning")]
         public GameObject lightningBallProjectile;    // this is a reference to your projectile prefab
         public Transform lightningBallSpawnTransform; // this is a reference to the transform where the prefab will spawn
         [SerializeField] float lightningBallAbilityCoolDownTime;
         [SerializeField] float lightningBallAbilityCoolDown;
+        bool lightningCooldown = false;
+        public Image lightningImage;
 
         [Header("Lightning Storm")]
         public GameObject lightningStormProjectile;    // this is a reference to your projectile prefab
         public Transform lightningStormSpawnTransform; // this is a reference to the transform where the prefab will spawn
         [SerializeField] float lightningStormAbilityCoolDownTime;
         [SerializeField] float lightningStormAbilityCoolDown;
-        
+        bool stormCooldown = false;
+        public Image stormImage;
+
+
+        private void Start()
+		{
+            tornadoImage.fillAmount = 1;
+            lightningImage.fillAmount = 1;
+            stormImage.fillAmount = 1;
+		}
 
         private void Update()
         {
+            if (tornadoUnlocked == false)
+			{
+                tornadoImage.fillAmount = 1;
+            }
+            else
+			{
+                tornadoImage.fillAmount = 0;
+            }
+
             if (Input.GetKeyDown(KeyCode.Q) && tornadoAbilityCoolDown <= 0 && tornadoUnlocked == true)
             {
                 m_Animator.Play("TornadoAnim");
                 Instantiate(tornadoProjectile, tornadoSpawnTransform.position, Camera.main.transform.rotation);
                 tornadoAbilityCoolDown = tornadoAbilityCoolDownTime;
+                tornadoCooldown = true;
+                tornadoImage.fillAmount = 1;
             }
             else if (Input.GetButton("Tornado") && tornadoAbilityCoolDown <= 0 && tornadoUnlocked == true)
             {
                 m_Animator.Play("TornadoAnim");
                 Instantiate(tornadoProjectile, tornadoSpawnTransform.position, Camera.main.transform.rotation);
                 tornadoAbilityCoolDown = tornadoAbilityCoolDownTime;
+                tornadoCooldown = true;
+                tornadoImage.fillAmount = 1;
             }
 
 
-            if (tornadoAbilityCoolDown > 0)
+            if (tornadoAbilityCoolDown > 0 && tornadoCooldown == true)
             {
                 tornadoAbilityCoolDown -= Time.deltaTime;
+                tornadoImage.fillAmount -= 1 / tornadoAbilityCoolDownTime * Time.deltaTime;
+            }
+
+
+            if (ballUnlocked && lightningCooldown == false)
+            {
+                lightningImage.fillAmount = 0;
             }
 
             if (Input.GetKeyDown(KeyCode.E) && lightningBallAbilityCoolDown <= 0 && ballUnlocked == true)
@@ -58,12 +92,17 @@ namespace Gamekit3D
                 m_Animator.Play("ZapZapAnim");
                 Instantiate(lightningBallProjectile, lightningBallSpawnTransform.position, Camera.main.transform.rotation);
                 lightningBallAbilityCoolDown = lightningBallAbilityCoolDownTime;
+                lightningCooldown = true;
+                lightningImage.fillAmount = 1;
+
             }
             else if (Input.GetButton("Ball") && lightningBallAbilityCoolDown <= 0 && ballUnlocked == true)
             {
                 m_Animator.Play("ZapZapAnim");
                 Instantiate(lightningBallProjectile, lightningBallSpawnTransform.position, Camera.main.transform.rotation);
                 lightningBallAbilityCoolDown = lightningBallAbilityCoolDownTime;
+                lightningCooldown = true;
+                lightningImage.fillAmount = 1;
             }
 
 
@@ -72,22 +111,41 @@ namespace Gamekit3D
                 lightningBallAbilityCoolDown -= Time.deltaTime;
             }
 
+            if (lightningCooldown)
+			{
+                lightningImage.fillAmount -= 1 / lightningBallAbilityCoolDownTime * Time.deltaTime;
+            }
+
+            if (stormUnlocked == false)
+            {
+                stormImage.fillAmount = 1;
+            }
+            else
+            { 
+                stormImage.fillAmount = 0;
+            }
+
             if (Input.GetKeyDown(KeyCode.R) && lightningStormAbilityCoolDown <= 0 && stormUnlocked == true)
             {
                 m_Animator.Play("StormAnim");
                 Instantiate(lightningStormProjectile, lightningStormSpawnTransform.position, transform.rotation);
                 lightningStormAbilityCoolDown = lightningStormAbilityCoolDownTime;
+                stormCooldown = true;
+                stormImage.fillAmount = 1;
             }
             else if (Input.GetButton("Storm") && lightningStormAbilityCoolDown <= 0 && stormUnlocked == true)
             {
                 m_Animator.Play("StormAnim");
                 Instantiate(lightningStormProjectile, lightningStormSpawnTransform.position, transform.rotation);
                 lightningStormAbilityCoolDown = lightningStormAbilityCoolDownTime;
+                stormCooldown = true;
+                stormImage.fillAmount = 1;
             }
 
-            if (lightningStormAbilityCoolDown > 0)
+            if (lightningStormAbilityCoolDown > 0 && stormCooldown == true)
             {
                 lightningStormAbilityCoolDown -= Time.deltaTime;
+                stormImage.fillAmount -= 1 / lightningStormAbilityCoolDownTime * Time.deltaTime;
             }
         }
 	}
