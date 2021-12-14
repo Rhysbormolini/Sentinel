@@ -48,14 +48,12 @@ namespace Gamekit3D
 
         private void Update()
         {
-            if (tornadoUnlocked == false)
-			{
-                tornadoImage.fillAmount = 1;
-            }
-            else
+			#region
+			if (tornadoUnlocked && tornadoCooldown == false)
 			{
                 tornadoImage.fillAmount = 0;
             }
+            
 
             if (Input.GetKeyDown(KeyCode.Q) && tornadoAbilityCoolDown <= 0 && tornadoUnlocked == true)
             {
@@ -75,14 +73,19 @@ namespace Gamekit3D
             }
 
 
-            if (tornadoAbilityCoolDown > 0 && tornadoCooldown == true)
+            if (tornadoAbilityCoolDown > 0)
             {
-                tornadoAbilityCoolDown -= Time.deltaTime;
-                tornadoImage.fillAmount -= 1 / tornadoAbilityCoolDownTime * Time.deltaTime;
+                tornadoAbilityCoolDown -= Time.deltaTime;  
             }
 
+            if (tornadoCooldown)
+            {
+                tornadoImage.fillAmount -= 1 / tornadoAbilityCoolDownTime * Time.deltaTime;
+            }
+			#endregion
 
-            if (ballUnlocked && lightningCooldown == false)
+			#region Lightning Orb
+			if (ballUnlocked && lightningCooldown == false)
             {
                 lightningImage.fillAmount = 0;
             }
@@ -115,15 +118,13 @@ namespace Gamekit3D
 			{
                 lightningImage.fillAmount -= 1 / lightningBallAbilityCoolDownTime * Time.deltaTime;
             }
+			#endregion
 
-            if (stormUnlocked == false)
+			if (stormUnlocked && stormCooldown == false)
             {
-                stormImage.fillAmount = 1;
-            }
-            else
-            { 
                 stormImage.fillAmount = 0;
             }
+           
 
             if (Input.GetKeyDown(KeyCode.R) && lightningStormAbilityCoolDown <= 0 && stormUnlocked == true)
             {
@@ -142,9 +143,14 @@ namespace Gamekit3D
                 stormImage.fillAmount = 1;
             }
 
-            if (lightningStormAbilityCoolDown > 0 && stormCooldown == true)
+            if (lightningStormAbilityCoolDown > 0)
             {
                 lightningStormAbilityCoolDown -= Time.deltaTime;
+                
+            }
+
+            if (stormCooldown)
+            {
                 stormImage.fillAmount -= 1 / lightningStormAbilityCoolDownTime * Time.deltaTime;
             }
         }
