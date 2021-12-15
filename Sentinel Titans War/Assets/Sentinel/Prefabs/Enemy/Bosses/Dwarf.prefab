@@ -56080,8 +56080,8 @@ MonoBehaviour:
     viewBlockerLayerMask:
       serializedVersion: 2
       m_Bits: 65536
-  meleeRange: 6
-  rangeRange: 25
+  meleeRange: 4
+  rangeRange: 15
   fistWeapon: {fileID: 4498634437679616080}
   grenadeLauncher: {fileID: 4498634439007884285}
   shield: {fileID: 4498634436951261417}
@@ -56101,10 +56101,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -1372625422
   m_Radius: 0.5
-  m_Speed: 10
-  m_Acceleration: 10
+  m_Speed: 3.5
+  m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 80
+  m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -56125,12 +56125,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25877601b9081164b9b64ec159b9a452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interpolateTurning: 1
-  applyAnimationRotation: 1
+  interpolateTurning: 0
+  applyAnimationRotation: 0
   m_Animator: {fileID: 4498634438175049619}
   state: 
-  runSpeed: 15
-  walkSpeed: 15
+  runSpeed: 1
+  walkSpeed: 1
 --- !u!114 &4498634438175049615
 MonoBehaviour:
   m_ObjectHideFlags: 0
