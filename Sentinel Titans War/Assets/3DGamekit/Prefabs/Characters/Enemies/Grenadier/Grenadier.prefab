@@ -89961,11 +89961,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0149b5ab8f608c943b260125ac76d875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 5
-  invulnerabiltyTime: 3
+  maxHitPoints: 15
+  invulnerabiltyTime: 1
   rollInvulnerabiltyTime: 0
-  hitAngle: 170
-  hitForwardRotation: 180
+  hitAngle: 360
+  hitForwardRotation: 360
   OnDeath:
     m_PersistentCalls:
       m_Calls:
@@ -95019,7 +95019,7 @@ MonoBehaviour:
     heightOffset: 2
     detectionRadius: 40
     detectionAngle: 360
-    maxHeightDifference: 5
+    maxHeightDifference: 10
     viewBlockerLayerMask:
       serializedVersion: 2
       m_Bits: 65536
