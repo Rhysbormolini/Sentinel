@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Sentinel/Scenes/Main Menu.unity
     guid: dfbec0045597340409b75f40a7b58f55
   - enabled: 1
+    path: Assets/Sentinel/Scenes/Still Image Cinematic.unity
+    guid: 1e377f1639d38ea4fb84525349ae879d
+  - enabled: 1
     path: Assets/Sentinel/Scenes/Game Scene.unity
     guid: 8e7a78cdb68e3e347ac858866bb62ae1
   m_configObjects:
