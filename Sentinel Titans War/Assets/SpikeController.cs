@@ -5,7 +5,6 @@ using UnityEngine;
 public class SpikeController : MonoBehaviour
 {
 	[SerializeField] List<GameObject> m_Spikes = new List<GameObject>();
-	[SerializeField] float m_TimeBetweenSpikes;
 
 	[SerializeField] float m_Speed;
 	[SerializeField] float m_MaxHeight;
@@ -14,19 +13,29 @@ public class SpikeController : MonoBehaviour
 	GameObject m_Spike;
 	bool m_Rising;
 	bool m_SpikeMoving;
-	int m_SpikeStartHeight;
+	float m_SpikeStartHeight;
+	List<Transform> m_SpikeChildren;
 	public void StartSpikes()
+	{
+		m_SpikeMoving = true;
+		m_Rising = true;
+		Debug.Log(m_Spike.name + " Started Moving");
+	}
+
+	public void StopSpikes()
+	{
+		m_SpikeMoving = false;
+	}
+	void Start()
 	{
 		m_SpikeMax = m_Spikes.Count;
 		m_Spike = m_Spikes[Random.Range(0, m_SpikeMax)];
-		InvokeRepeating(nameof(Spikes), 0.1f, m_TimeBetweenSpikes);
-		
+		m_SpikeStartHeight = m_Spike.transform.position.y;
 	}
 
-    void Spikes()
+    void Update()
 	{
-		m_SpikeMoving = true;
-		while (m_SpikeMoving)
+		if(m_SpikeMoving)
 		{
 			if (m_Rising && m_Spike.transform.position.y < m_MaxHeight)
 			{
@@ -42,8 +51,9 @@ public class SpikeController : MonoBehaviour
 			}
 			if(m_Spike.transform.position.y <= m_SpikeStartHeight && !m_Rising)
 			{
-				m_SpikeMoving = false;
 				m_Spike = m_Spikes[Random.Range(0, m_SpikeMax)];
+				m_SpikeStartHeight = m_Spike.transform.position.y;
+				m_Rising = true;
 			}
 		}
 	}
