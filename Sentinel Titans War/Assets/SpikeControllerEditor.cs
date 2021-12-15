@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(SpikeController))]
 public class SpikeControllerEditor : Editor
 {
@@ -17,3 +18,4 @@ public class SpikeControllerEditor : Editor
 		}
 	}
 }
+#endif
