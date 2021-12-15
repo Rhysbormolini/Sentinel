@@ -168,7 +168,6 @@ GameObject:
   - component: {fileID: 7938502745784861927}
   - component: {fileID: 2572165335772127770}
   - component: {fileID: 5317393090188468950}
-  - component: {fileID: 422573917832137317}
   m_Layer: 28
   m_Name: SM_Stone_02_LOD0
   m_TagString: Untagged
@@ -239,20 +238,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &422573917832137317
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6638444436600798980}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1397682179614556068, guid: 858ede0785eb113469b42a1d43b0aa6f, type: 3}
 --- !u!1 &6781260037554949304
 GameObject:
   m_ObjectHideFlags: 0
