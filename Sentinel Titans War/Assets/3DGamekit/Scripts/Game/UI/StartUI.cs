@@ -56,7 +56,10 @@ namespace Gamekit3D
         {
             m_InPause = true;
             SwitchPauseState();
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
+            ProjectileTrigger.ballUnlocked = false;
+            ProjectileTrigger.stormUnlocked = false;
+            ProjectileTrigger.tornadoUnlocked = false;
         }
 
         void Update()
